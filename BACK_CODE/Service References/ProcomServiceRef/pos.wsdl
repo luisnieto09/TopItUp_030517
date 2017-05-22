@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://lang.java" xmlns:tns="http://services.tae.com.mx" xmlns:ns5="http://model.taepue.com.mx" xmlns:ns3="http://rpc.xml.javax" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:ns4="http://io.java" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://model.tae.com.mx" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://services.tae.com.mx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.tae.com.mx">
+      <xsd:element name="getBalance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBalanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:BalanceResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ServiceException" type="ns3:ServiceException" />
+      <xsd:element name="getTransactions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTransactionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfTransactionResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAccounts">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAccountsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfAccountResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IOException" type="ns4:IOException" />
+      <xsd:element name="doTransaction">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="doTransactionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns5:RecargaResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="doPosTransaction">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="doPosTransactionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns5:RecargaResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setNewPassphrase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setNewPassphraseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ServiceResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="notifyDeposit">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="ns1:Deposit" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="notifyDepositResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:DepositResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPosTransaction">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPosTransactionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns5:RecargaResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model.tae.com.mx">
+      <xsd:complexType name="BalanceResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="balance" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfTransactionResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="TransactionResult" nillable="true" type="ns1:TransactionResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TransactionResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="autorizacion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="carrier" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codigo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descripcion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fecha" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idTransaction" type="xsd:long" />
+          <xsd:element minOccurs="0" name="monto" type="xsd:int" />
+          <xsd:element minOccurs="0" name="numero" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="respuesta" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="usuario" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfAccountResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="AccountResult" nillable="true" type="ns1:AccountResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AccountResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="beneficiario" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="comentario" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idCuenta" type="xsd:int" />
+          <xsd:element minOccurs="0" name="nombreBanco" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="numeroCuenta" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="requiereFicha" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sucursal" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="succesful" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Deposit">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="archivo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="autorizacion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fechaFicha" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="horaFicha" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idCuenta" type="xsd:int" />
+          <xsd:element minOccurs="0" name="monto" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DepositResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="exito" type="xsd:int" />
+          <xsd:element minOccurs="0" name="fecha" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="hora" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idDeposito" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://rpc.xml.javax">
+      <xsd:complexType name="ServiceException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="linkedCause" nillable="true" type="ns2:Throwable" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lang.java">
+      <xsd:complexType name="Throwable" />
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java">
+      <xsd:complexType name="IOException" />
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model.taepue.com.mx">
+      <xsd:complexType name="RecargaResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codigo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descripcionResultado" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="folioExterno" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="folioTaePue" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="transaccionExterna" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getTransactionsResponse">
+    <wsdl:part name="parameters" element="tns:getTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAccountsResponse">
+    <wsdl:part name="parameters" element="tns:getAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="doPosTransactionResponse">
+    <wsdl:part name="parameters" element="tns:doPosTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOException">
+    <wsdl:part name="IOException" element="tns:IOException" />
+  </wsdl:message>
+  <wsdl:message name="doPosTransactionRequest">
+    <wsdl:part name="parameters" element="tns:doPosTransaction" />
+  </wsdl:message>
+  <wsdl:message name="getBalanceResponse">
+    <wsdl:part name="parameters" element="tns:getBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="setNewPassphraseResponse">
+    <wsdl:part name="parameters" element="tns:setNewPassphraseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPosTransactionResponse">
+    <wsdl:part name="parameters" element="tns:getPosTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPosTransactionRequest">
+    <wsdl:part name="parameters" element="tns:getPosTransaction" />
+  </wsdl:message>
+  <wsdl:message name="getAccountsRequest">
+    <wsdl:part name="parameters" element="tns:getAccounts" />
+  </wsdl:message>
+  <wsdl:message name="doTransactionResponse">
+    <wsdl:part name="parameters" element="tns:doTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceException">
+    <wsdl:part name="ServiceException" element="tns:ServiceException" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionsRequest">
+    <wsdl:part name="parameters" element="tns:getTransactions" />
+  </wsdl:message>
+  <wsdl:message name="doTransactionRequest">
+    <wsdl:part name="parameters" element="tns:doTransaction" />
+  </wsdl:message>
+  <wsdl:message name="setNewPassphraseRequest">
+    <wsdl:part name="parameters" element="tns:setNewPassphrase" />
+  </wsdl:message>
+  <wsdl:message name="getBalanceRequest">
+    <wsdl:part name="parameters" element="tns:getBalance" />
+  </wsdl:message>
+  <wsdl:message name="notifyDepositRequest">
+    <wsdl:part name="parameters" element="tns:notifyDeposit" />
+  </wsdl:message>
+  <wsdl:message name="notifyDepositResponse">
+    <wsdl:part name="parameters" element="tns:notifyDepositResponse" />
+  </wsdl:message>
+  <wsdl:portType name="posPortType">
+    <wsdl:operation name="getBalance">
+      <wsdl:input name="getBalanceRequest" message="tns:getBalanceRequest" />
+      <wsdl:output name="getBalanceResponse" message="tns:getBalanceResponse" />
+      <wsdl:fault name="ServiceException" message="tns:ServiceException" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactions">
+      <wsdl:input name="getTransactionsRequest" message="tns:getTransactionsRequest" />
+      <wsdl:output name="getTransactionsResponse" message="tns:getTransactionsResponse" />
+      <wsdl:fault name="ServiceException" message="tns:ServiceException" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccounts">
+      <wsdl:input name="getAccountsRequest" message="tns:getAccountsRequest" />
+      <wsdl:output name="getAccountsResponse" message="tns:getAccountsResponse" />
+      <wsdl:fault name="IOException" message="tns:IOException" />
+      <wsdl:fault name="ServiceException" message="tns:ServiceException" />
+    </wsdl:operation>
+    <wsdl:operation name="doTransaction">
+      <wsdl:input name="doTransactionRequest" message="tns:doTransactionRequest" />
+      <wsdl:output name="doTransactionResponse" message="tns:doTransactionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doPosTransaction">
+      <wsdl:input name="doPosTransactionRequest" message="tns:doPosTransactionRequest" />
+      <wsdl:output name="doPosTransactionResponse" message="tns:doPosTransactionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setNewPassphrase">
+      <wsdl:input name="setNewPassphraseRequest" message="tns:setNewPassphraseRequest" />
+      <wsdl:output name="setNewPassphraseResponse" message="tns:setNewPassphraseResponse" />
+      <wsdl:fault name="ServiceException" message="tns:ServiceException" />
+    </wsdl:operation>
+    <wsdl:operation name="notifyDeposit">
+      <wsdl:input name="notifyDepositRequest" message="tns:notifyDepositRequest" />
+      <wsdl:output name="notifyDepositResponse" message="tns:notifyDepositResponse" />
+      <wsdl:fault name="IOException" message="tns:IOException" />
+      <wsdl:fault name="ServiceException" message="tns:ServiceException" />
+    </wsdl:operation>
+    <wsdl:operation name="getPosTransaction">
+      <wsdl:input name="getPosTransactionRequest" message="tns:getPosTransactionRequest" />
+      <wsdl:output name="getPosTransactionResponse" message="tns:getPosTransactionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="posHttpBinding" type="tns:posPortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBalance">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getBalanceRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBalanceResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <wsdlsoap:fault use="literal" name="ServiceException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactions">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTransactionsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTransactionsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <wsdlsoap:fault use="literal" name="ServiceException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccounts">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAccountsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAccountsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IOException">
+        <wsdlsoap:fault use="literal" name="IOException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServiceException">
+        <wsdlsoap:fault use="literal" name="ServiceException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doTransaction">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doTransactionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doTransactionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doPosTransaction">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doPosTransactionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doPosTransactionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setNewPassphrase">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="setNewPassphraseRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setNewPassphraseResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <wsdlsoap:fault use="literal" name="ServiceException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="notifyDeposit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="notifyDepositRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="notifyDepositResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IOException">
+        <wsdlsoap:fault use="literal" name="IOException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServiceException">
+        <wsdlsoap:fault use="literal" name="ServiceException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPosTransaction">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPosTransactionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPosTransactionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="pos">
+    <wsdl:port name="posHttpPort" binding="tns:posHttpBinding">
+      <wsdlsoap:address location="http://v3.promocom.mx:38082/wstaev1/services/pos" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

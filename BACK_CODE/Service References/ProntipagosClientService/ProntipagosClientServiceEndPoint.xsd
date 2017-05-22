@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.usa.siveta.cm.com/" xmlns:ns1="http://siveta.ws.com" targetNamespace="http://ws.usa.siveta.cm.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint?xsd=2" namespace="http://siveta.ws.com" />
+  <xs:element name="ServiceException" type="tns:ServiceException" />
+  <xs:element name="TransactionException" nillable="true" type="ns1:TransactionException" />
+  <xs:element name="WebServiceException" nillable="true" type="ns1:WebServiceException" />
+  <xs:element name="checkStatusTopUp" type="tns:checkStatusTopUp" />
+  <xs:element name="checkStatusTopUpResponse" type="tns:checkStatusTopUpResponse" />
+  <xs:element name="topUp" type="tns:topUp" />
+  <xs:element name="topUpPackage" type="tns:topUpPackage" />
+  <xs:element name="topUpPackageResponse" type="tns:topUpPackageResponse" />
+  <xs:element name="topUpResponse" type="tns:topUpResponse" />
+  <xs:element name="topUpTAE" type="tns:topUpTAE" />
+  <xs:element name="topUpTAEResponse" type="tns:topUpTAEResponse" />
+  <xs:complexType name="topUpTAE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="msisdn" type="xs:long" />
+      <xs:element minOccurs="0" name="clientReference" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="topUpTAEResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionResponseDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transactionResponseDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codeDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="codeTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="dateTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="folioTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="statusTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="checkStatusTopUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clientReference" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="checkStatusTopUpResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transactionResponseTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="statusTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="codeDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="dateTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionId" type="xs:string" />
+          <xs:element minOccurs="0" name="folioTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionStatusDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="additionalInfo" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="dto" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="topUpPackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="reference" type="xs:string" />
+      <xs:element minOccurs="0" name="sku" type="xs:string" />
+      <xs:element minOccurs="0" name="clientReference" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="topUpPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:sellResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sellResponseTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionCode" type="tns:transactionResponseCode" />
+      <xs:element name="transactionStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="transactionId" type="xs:long" />
+      <xs:element minOccurs="0" name="transactionFolio" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="topUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="reference" type="xs:string" />
+      <xs:element minOccurs="0" name="clientReference" type="xs:string" />
+      <xs:element minOccurs="0" name="sku" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="topUpResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:sellResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="transactionResponseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESSFUL_TX" />
+      <xs:enumeration value="INVALID_PHONE" />
+      <xs:enumeration value="DESTINATION_UNAVAILABLE" />
+      <xs:enumeration value="INVALID_AMOUNT" />
+      <xs:enumeration value="CANNOT_PROCESS_PHONE" />
+      <xs:enumeration value="UNAVAILABLE_CREDIT" />
+      <xs:enumeration value="TELCEL_MAINTENANCE" />
+      <xs:enumeration value="TX_TABLE_FULL" />
+      <xs:enumeration value="INTERNAL_TIMEOUT" />
+      <xs:enumeration value="UNAVAILABLE_AUTHORIZATOR" />
+      <xs:enumeration value="UNAVAILABLE_PRODUCT" />
+      <xs:enumeration value="NO_ACCOUNT_ASSOCIATED" />
+      <xs:enumeration value="NOT_AUTHORIZED_TO_SELL" />
+      <xs:enumeration value="INVALID_TICKET" />
+      <xs:enumeration value="SYSTEM_MAINTENANCE" />
+      <xs:enumeration value="AREA_CODE_NOT_ASSIGNED" />
+      <xs:enumeration value="TX_TIMEOUT" />
+      <xs:enumeration value="INSUFFICIENT_DATA" />
+      <xs:enumeration value="TX_INVALID_TRXID" />
+      <xs:enumeration value="INVALID_MSISDN" />
+      <xs:enumeration value="INVALID_KEYWORD" />
+      <xs:enumeration value="INVALID_USER" />
+      <xs:enumeration value="NOT_ALLOW_USER" />
+      <xs:enumeration value="MORE_THAN_ONE_SKU" />
+      <xs:enumeration value="ERROR_SELL" />
+      <xs:enumeration value="ERROR_WS" />
+      <xs:enumeration value="ERROR_HTTP_SESSION" />
+      <xs:enumeration value="PROCESSING_TRANSACTION" />
+      <xs:enumeration value="INVALID_SOURCE_ACCOUNT" />
+      <xs:enumeration value="INVALID_DESTINATION_ACCOUNT" />
+      <xs:enumeration value="INVALID_MAIL" />
+      <xs:enumeration value="NOT_ALLOWED_NODE_TYPE" />
+      <xs:enumeration value="UPDATE_SUCCESS" />
+      <xs:enumeration value="DUPLICATE_NODE_OR_USER" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

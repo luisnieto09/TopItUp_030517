@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://siveta.ws.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ProntipagosServiceEndPoint" targetNamespace="http://siveta.ws.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosServiceEndPoint?xsd=1" namespace="http://siveta.ws.com" />
+    </xsd:schema>
+  </types>
+  <message name="changePassword">
+    <part name="parameters" element="tns:changePassword" />
+  </message>
+  <message name="changePasswordResponse">
+    <part name="parameters" element="tns:changePasswordResponse" />
+  </message>
+  <message name="sell">
+    <part name="parameters" element="tns:sell" />
+  </message>
+  <message name="sellResponse">
+    <part name="parameters" element="tns:sellResponse" />
+  </message>
+  <message name="checkStatus">
+    <part name="parameters" element="tns:checkStatus" />
+  </message>
+  <message name="checkStatusResponse">
+    <part name="parameters" element="tns:checkStatusResponse" />
+  </message>
+  <message name="WebServiceException">
+    <part name="fault" element="tns:WebServiceException" />
+  </message>
+  <message name="obtainCatalogProducts">
+    <part name="parameters" element="tns:obtainCatalogProducts" />
+  </message>
+  <message name="obtainCatalogProductsResponse">
+    <part name="parameters" element="tns:obtainCatalogProductsResponse" />
+  </message>
+  <message name="checkClientBalances">
+    <part name="parameters" element="tns:checkClientBalances" />
+  </message>
+  <message name="checkClientBalancesResponse">
+    <part name="parameters" element="tns:checkClientBalancesResponse" />
+  </message>
+  <message name="sellTAE">
+    <part name="parameters" element="tns:sellTAE" />
+  </message>
+  <message name="sellTAEResponse">
+    <part name="parameters" element="tns:sellTAEResponse" />
+  </message>
+  <message name="TransactionException">
+    <part name="fault" element="tns:TransactionException" />
+  </message>
+  <message name="sellPackage">
+    <part name="parameters" element="tns:sellPackage" />
+  </message>
+  <message name="sellPackageResponse">
+    <part name="parameters" element="tns:sellPackageResponse" />
+  </message>
+  <portType name="ProntipagosServiceEndPoint">
+    <operation name="changePassword">
+      <input wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/changePasswordRequest" message="tns:changePassword" />
+      <output wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/changePasswordResponse" message="tns:changePasswordResponse" />
+    </operation>
+    <operation name="sell">
+      <input wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/sellRequest" message="tns:sell" />
+      <output wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/sellResponse" message="tns:sellResponse" />
+    </operation>
+    <operation name="checkStatus">
+      <input wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/checkStatusRequest" message="tns:checkStatus" />
+      <output wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/checkStatusResponse" message="tns:checkStatusResponse" />
+      <fault wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/checkStatus/Fault/WebServiceException" name="WebServiceException" message="tns:WebServiceException" />
+    </operation>
+    <operation name="obtainCatalogProducts">
+      <input wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/obtainCatalogProductsRequest" message="tns:obtainCatalogProducts" />
+      <output wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/obtainCatalogProductsResponse" message="tns:obtainCatalogProductsResponse" />
+    </operation>
+    <operation name="checkClientBalances">
+      <input wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/checkClientBalancesRequest" message="tns:checkClientBalances" />
+      <output wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/checkClientBalancesResponse" message="tns:checkClientBalancesResponse" />
+    </operation>
+    <operation name="sellTAE">
+      <input wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/sellTAERequest" message="tns:sellTAE" />
+      <output wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/sellTAEResponse" message="tns:sellTAEResponse" />
+      <fault wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/sellTAE/Fault/TransactionException" name="TransactionException" message="tns:TransactionException" />
+    </operation>
+    <operation name="sellPackage">
+      <input wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/sellPackageRequest" message="tns:sellPackage" />
+      <output wsam:Action="http://siveta.ws.com/ProntipagosServiceEndPoint/sellPackageResponse" message="tns:sellPackageResponse" />
+    </operation>
+  </portType>
+  <binding name="ProntipagosServiceEndPointPortBinding" type="tns:ProntipagosServiceEndPoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="changePassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="sell">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="checkStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WebServiceException">
+        <soap:fault use="literal" name="WebServiceException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="obtainCatalogProducts">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="checkClientBalances">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="sellTAE">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="TransactionException">
+        <soap:fault use="literal" name="TransactionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="sellPackage">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProntipagosServiceEndPoint">
+    <port name="ProntipagosServiceEndPointPort" binding="tns:ProntipagosServiceEndPointPortBinding">
+      <soap:address location="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosServiceEndPoint" />
+    </port>
+  </service>
+</definitions>

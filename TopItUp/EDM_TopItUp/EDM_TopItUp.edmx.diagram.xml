@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b25a39432984407fb36effb8afbd96f4" Name="Diagram1">
+        <EntityTypeShape EntityType="EDM_TopItUp1.ACCESOS" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.ACCESS_GROUPS" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_BANCOS" Width="1.5" PointX="6.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_MEDIOS_DE_PAGO" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_MONEDAS" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_MONTOS_DISPONIBLES" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_PAISES" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_RAZONES_SOCIALES" Width="1.5" PointX="3.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_SERVICIOS" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_STATUS_PAGOS" Width="1.5" PointX="9" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_TELEFONIAS" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_TIPOS_MVTO" Width="1.5" PointX="3" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_WS" Width="1.5" PointX="3" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CLIENTES" Width="1.5" PointX="6" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CLIENTES_USERS" Width="1.5" PointX="8.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CTAS_BANCARIAS_EMPRESAS" Width="1.5" PointX="9" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.DUDAS_COMENTARIOS" Width="1.5" PointX="5.25" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.EMPRESAS" Width="1.5" PointX="3.75" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.FILES" Width="1.5" PointX="11.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.LLAVES_TRANS_SODESI_PRONTIPAGOS" Width="1.5" PointX="8.25" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.NOTICIAS" Width="1.5" PointX="9" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.NOTICIAS_CLIENTES" Width="1.5" PointX="11.25" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.PAGES" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.PAGES_ACCESS_GROUPS" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.PAGES_USERS" Width="1.5" PointX="5.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.PAGOS" Width="1.5" PointX="11.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.PAGOS_FILES_UPLOADED" Width="1.5" PointX="13.5" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.PARAMETROS" Width="1.5" PointX="8.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.SALDOS" Width="1.5" PointX="13.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.SERVICIOS_CLIENTE_REL" Width="1.5" PointX="10.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.TELEFONIAS_CLIENTES" Width="1.5" PointX="8.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.TELEFONIAS_PAISES" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGES_ACC__FK_AC__3A02903A" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGES_ACC__FK_AC__737017C0" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CTAS_BANC__FK_CA__3449B6E4" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CTAS_BANC__FK_CA__6DB73E6A" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGOS__FK_MEDIO___3EC74557" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGOS__FK_MEDIO___7834CCDD" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CAT_MONTO__FK_CA__25077354" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CAT_MONTO__FK_CA__5E74FADA" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CAT_MONTO__FK_CA__24134F1B" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CAT_MONTO__FK_CA__5D80D6A1" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CA__02B25B50" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CA__4668671F" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES__FK_CAT__25FB978D" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES__FK_CAT__5F691F13" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.fk_const_cat_status_pagos" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CA__01BE3717" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CA__438BFA74" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CA__457442E6" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CA__7FD5EEA5" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__28D80438" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__29CC2871" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__2AC04CAA" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__2BB470E3" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__2CA8951C" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__2D9CB955" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__62458BBE" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__6339AFF7" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__642DD430" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__6521F869" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__66161CA2" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_CL__670A40DB" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES__FK_CLI__26EFBBC6" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES__FK_CLI__605D434C" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES__FK_EMP__27E3DFFF" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES__FK_EMP__61516785" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__LLAVES_TR__FK_CL__3726238F" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__LLAVES_TR__FK_CL__7093AB15" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__NOTICIAS___FK_CL__381A47C8" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__NOTICIAS___FK_CL__7187CF4E" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CL__00CA12DE" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TELEFONIA__FK_CL__44801EAD" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CTAS_BANC__FK_EM__353DDB1D" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CTAS_BANC__FK_EM__6EAB62A3" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGOS__FK_CTA_BA__3DD3211E" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGOS__FK_CTA_BA__7740A8A4" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGOS_FIL__FK_FI__7246E95D" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__NOTICIAS___FK_NO__390E6C01" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__NOTICIAS___FK_NO__727BF387" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGES_ACC__FK_PA__3AF6B473" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGES_ACC__FK_PA__74643BF9" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGES_USE__FK_PA__3BEAD8AC" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGES_USE__FK_PA__75586032" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGOS_FIL__FK_PA__733B0D96" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__SALDOS__FK_PAGO__40AF8DC9" ManuallyRouted="false" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__SALDOS__FK_PAGO__7CF981FA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.WCF" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.REGISTRO_RAPIDO" Width="1.5" PointX="11.375" PointY="7.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAJEROS" Width="1.5" PointX="12.375" PointY="4.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.HORARIO_CAJERO" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.TRANSACCIONES_CAJERO" Width="2.125" PointX="13.375" PointY="7.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.INTEGRATICKETS" Width="1.5" PointX="7.375" PointY="13.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.INTEGRA_TICKETS" Width="1.5" PointX="9.375" PointY="13.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.NVOINTEGRATICKET" Width="1.5" PointX="13.375" PointY="10.75" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.USERS" Width="1.5" PointX="3" PointY="20.5" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__ACCESOS__FK_USER__2CA96073" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__USERS__FK_ACCESS__597C06EA" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_US__381B131F" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_US__390F3758" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_US__3A035B91" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_US__3AF77FCA" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_US__3BEBA403" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__CLIENTES___FK_US__3CDFC83C" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__DUDAS_COM__FK_US__3FBC34E7" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGES_USE__FK_US__46693276" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__PAGOS__FK_USER__49459F21" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__SALDOS__FK_USER__4EFE7877" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.TRANSACCIONES" Width="1.5" PointX="14.25" PointY="25.875" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_CA__5793BE78" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_CA__569F9A3F" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_CA__55AB7606" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_CA__54B751CD" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_CA__53C32D94" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__SALDOS__FK_TRANS__4E0A543E" />
+        <AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_US__5887E2B1" />
+        <EntityTypeShape EntityType="EDM_TopItUp1.CAT_MOSTRAR_HASTA" Width="1.5" PointX="14.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

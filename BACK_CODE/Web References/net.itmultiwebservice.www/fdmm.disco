@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www2.itmultiwebservice.net/wsdmm/fdmm.asmx?wsdl" docRef="http://www2.itmultiwebservice.net/wsdmm/fdmm.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www2.itmultiwebservice.net/wsdmm/fdmm.asmx" xmlns:q1="DMM" binding="q1:Recargas_ElectronicasSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www2.itmultiwebservice.net/wsdmm/fdmm.asmx" xmlns:q2="DMM" binding="q2:Recargas_ElectronicasSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

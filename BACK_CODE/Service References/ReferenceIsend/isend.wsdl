@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://isendonline.com/20080127" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://isendonline.com/20080127" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Version:&lt;/b&gt; 2.2&lt;/br&gt;&lt;/br&gt;&lt;b&gt;Description:&lt;/b&gt;&lt;/br&gt;A retailer initiates a transaction at their point of sale (POS) system. &lt;/br&gt;Their transaction process formats the request according to the details of this document. &lt;/br&gt;The request is transmitted through a HTTPS request to the iSend server web services.  &lt;/br&gt;The iSend server confirms the transaction for accuracy and responds with the command response. &lt;/br&gt;The retailers server formats a receipt for printing at the POS and the employee completes the transaction.  &lt;/br&gt;Typical transactions would be cell-phone top up (Topup) or bill payments. &lt;/br&gt;Each transaction has specific data requirements and the retailer must provide this data for a transaction. &lt;/br&gt;Currency conversions are handled as necessary in the iSend server by the web services. &lt;/br&gt;&lt;/br&gt;&lt;b&gt;Technical Specs:&lt;/b&gt; &lt;a href='docs/iSendWebServiceTechnicalSpecs.pdf'&gt;iSendWebServiceTehnicalSpecs&lt;/a&gt;</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://isendonline.com/20080127">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetAgentInfoRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetAgentInfoRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RequestBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AgentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentPassword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAgentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentInfoResult" type="tns:GetAgentInfoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetAgentInfoResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="agent" type="tns:AgentData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResponseBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCodes" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgentData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="agentid" type="s:unsignedInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="corpid" type="s:unsignedInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="addressid" type="s:unsignedInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="externalAgentid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bankaccountPull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bankaccountPush" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="psw" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abaPull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abaPush" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address" type="tns:Address" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="addressid" type="s:unsignedInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contactname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:ListOfCountryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListOfCountryRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountriesResult" type="tns:ListOfCountryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListOfCountryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CountryList" type="tns:ArrayOfCountryData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCountryData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CountryData" nillable="true" type="tns:CountryData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CountryData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CountryId" type="s:unsignedInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBillers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:ListOfBillersRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListOfBillersRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:unsignedInt" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShowCarrierName" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetBillersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBillersResult" type="tns:ListOfBillersResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListOfBillersResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BillerList" type="tns:ArrayOfBillerData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfBillerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BillerData" nillable="true" type="tns:BillerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BillerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BillerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillerServiceList" type="tns:ArrayOfPaymentService" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FixedAmounts" type="tns:ArrayOfInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxAmount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillerType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCodeAlpha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCodeAlpha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountMask">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaymentService">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentService" nillable="true" type="tns:PaymentService" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentService">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentServiceTypeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentServiceTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExchangeRate" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFeeInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetFeeInfoRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetFeeInfoRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="BillerID" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetFeeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFeeInfoResult" type="tns:GetFeeInfoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetFeeInfoResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BillerServiceList" type="tns:ArrayOfPaymentService" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetFundingSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetFundingSourcesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetFundingSourcesRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="FundingSourceInfo" type="tns:FundingSource" />
+              <s:element minOccurs="1" maxOccurs="1" name="Update" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="FundingSource">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="fundingsourceid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="payerid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fundingtypeid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="fundingaccount" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFundingSourceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFundingSourceResult" type="tns:GetFundingSourcesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetFundingSourcesResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="FundingSources" type="tns:ArrayOfFundingSource" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfFundingSource">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FundingSource" nillable="true" type="tns:FundingSource" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:PostPaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostPaymentRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentInfo" type="tns:PaymentData" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalTransactionID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FundingSourceID" type="s:unsignedInt" />
+              <s:element minOccurs="1" maxOccurs="1" name="ValidateOnly" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerPassword" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InfoParameters" type="tns:ArrayOfInfoParameter" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PaymentData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentServiceTypeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeneficiaryAccountID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntryTimeStamp" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInfoParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoParameter" nillable="true" type="tns:InfoParameter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostPaymentResult" type="tns:PostPaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostPaymentResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalTransactionID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransactionID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalAgentFee" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalCustomerFee" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReceiptText" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:PaymentStatus" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalPaymentAmount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ExchangeRate" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="EntryTimeStamp" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ConfirmationRequired" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InfoParameterQuestions" type="tns:ArrayOfInfoParameterQuestion" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="PaymentStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="New" />
+          <s:enumeration value="Pending" />
+          <s:enumeration value="Processed" />
+          <s:enumeration value="Failed" />
+          <s:enumeration value="Cancelled" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfInfoParameterQuestion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoParameterQuestion" nillable="true" type="tns:InfoParameterQuestion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoParameterQuestion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Question" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Choices" type="tns:ArrayOfInfoParameterChoice" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInfoParameterChoice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoParameterChoice" nillable="true" type="tns:InfoParameterChoice" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoParameterChoice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostSimplePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:PostSimplePaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostSimplePaymentRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalTransactionID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ValidateOnly" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="BillerID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaymentServiceTypeID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EntryTimeStamp" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="InfoParameters" type="tns:ArrayOfInfoParameter" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="PostSimplePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostSimplePaymentResult" type="tns:PostPaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:ConfirmPaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConfirmPaymentRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="TransactionID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalTransactionID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ConfirmPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmPaymentResult" type="tns:PostPaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:CancelPaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelPaymentRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalTransactionID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CancelPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelPaymentResult" type="tns:CancelPaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelPaymentResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalTransactionID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentStatus" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CancelSimplePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:CancelSimplePaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelSimplePaymentRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalTransactionID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CancelSimplePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelSimplePaymentResult" type="tns:CancelPaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAndGetCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:SaveAndGetCustomerRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaveAndGetCustomerRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerInfo" type="tns:CustomerData" />
+              <s:element minOccurs="1" maxOccurs="1" name="Update" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CustomerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="minitial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="homephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="workphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cellphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveAndGetCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveAndGetCustomerResult" type="tns:SaveAndGetCustomerResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaveAndGetCustomerResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerInfo" type="tns:CustomerData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SaveAndGetBeneficiary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:SaveAndGetBeneficiaryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaveAndGetBeneficiaryRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryInfo" type="tns:BeneficiaryData" />
+              <s:element minOccurs="1" maxOccurs="1" name="Update" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerPassword" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BeneficiaryData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BeneficiaryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="payerid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="addressid" type="s:unsignedInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="minitial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="homephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="workphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cellphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accounts" type="tns:ArrayOfBeneficiaryAccount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBeneficiaryAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BeneficiaryAccount" nillable="true" type="tns:BeneficiaryAccount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BeneficiaryAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeneficiaryAccountID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveAndGetBeneficiaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveAndGetBeneficiaryResult" type="tns:SaveAndGetBeneficiaryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaveAndGetBeneficiaryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryInfo" type="tns:BeneficiaryData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetBeneficiaryBills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetBeneficiaryBillsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetBeneficiaryBillsRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerPassword" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="GetAccountNumbers" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetBeneficiaryBillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBeneficiaryBillsResult" type="tns:GetBeneficiaryBillsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetBeneficiaryBillsResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AccountList" type="tns:ArrayOfPayableAccount" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPayableAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PayableAccount" nillable="true" type="tns:PayableAccount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PayableAccount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BeneficiaryAccountsID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeneficiaryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillerID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCorpAgentBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetCorpAgentBalanceRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCorpAgentBalanceRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetCorpAgentBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCorpAgentBalanceResult" type="tns:GetCorpAgentBalanceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCorpAgentBalanceResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CurrentBalance" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetCommissionRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetCommissionRatesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCommissionRatesRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetCommissionRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommissionRatesResult" type="tns:GetCommissionRatesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCommissionRatesResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BillerCommissions" type="tns:ArrayOfBillerCommissionData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfBillerCommissionData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BillerCommissionData" nillable="true" type="tns:BillerCommissionData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BillerCommissionData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BillerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommissionRate" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOperators">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetOperatorsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetOperatorsRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShowCarrierName" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetOperatorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperatorsResult" type="tns:ListOfBillersResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromotions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:ListOfPromotionsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListOfPromotionsRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RequestBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetPromotionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPromotionsResult" type="tns:ListOfPromotionsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListOfPromotionsResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PromotionList" type="tns:ArrayOfPromotionData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPromotionData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PromotionData" nillable="true" type="tns:PromotionData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PromotionData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PromotionID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="TermsAndConditions">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="testDatabaseConn">
+        <s:complexType />
+      </s:element>
+      <s:element name="testDatabaseConnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testDatabaseConnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillers" />
+  </wsdl:message>
+  <wsdl:message name="GetBillersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFeeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFeeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFeeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFeeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFundingSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFundingSource" />
+  </wsdl:message>
+  <wsdl:message name="GetFundingSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFundingSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:PostPayment" />
+  </wsdl:message>
+  <wsdl:message name="PostPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:PostPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostSimplePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:PostSimplePayment" />
+  </wsdl:message>
+  <wsdl:message name="PostSimplePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:PostSimplePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmPayment" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelPayment" />
+  </wsdl:message>
+  <wsdl:message name="CancelPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelSimplePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelSimplePayment" />
+  </wsdl:message>
+  <wsdl:message name="CancelSimplePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelSimplePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAndGetCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAndGetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="SaveAndGetCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAndGetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAndGetBeneficiarySoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAndGetBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="SaveAndGetBeneficiarySoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAndGetBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBeneficiaryBillsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBeneficiaryBills" />
+  </wsdl:message>
+  <wsdl:message name="GetBeneficiaryBillsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBeneficiaryBillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCorpAgentBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCorpAgentBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetCorpAgentBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCorpAgentBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommissionRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCommissionRates" />
+  </wsdl:message>
+  <wsdl:message name="GetCommissionRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommissionRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperatorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperators" />
+  </wsdl:message>
+  <wsdl:message name="GetOperatorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPromotionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPromotions" />
+  </wsdl:message>
+  <wsdl:message name="GetPromotionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPromotionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="testDatabaseConnSoapIn">
+    <wsdl:part name="parameters" element="tns:testDatabaseConn" />
+  </wsdl:message>
+  <wsdl:message name="testDatabaseConnSoapOut">
+    <wsdl:part name="parameters" element="tns:testDatabaseConnResponse" />
+  </wsdl:message>
+  <wsdl:portType name="iSendServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Test acting as a Ping function.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Get information such demographics, contact name, etc; regarding a specific agent.&lt;/br&gt;Agent information is set up via the iSend Website.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAgentInfoSoapIn" />
+      <wsdl:output message="tns:GetAgentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Pulls down a list of available countries to which payments can be made.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCountriesSoapIn" />
+      <wsdl:output message="tns:GetCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Pulls down a list of billers for a specific CountryID. &lt;/br&gt;CountryID's are received from the GetCountry call. &lt;/br&gt;Calling this service with a CountryID of 0 will return a complete list of all billers.  &lt;/br&gt;For each biller all info in the GetFeeInfo will be included.  &lt;/br&gt;For fixed amount Top Up transactions the biller will contain an equal Min and Max amount.  &lt;/br&gt;This is the amount the transaction must contain to be accepted (for example: $20.00 TelCel).&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetBillersSoapIn" />
+      <wsdl:output message="tns:GetBillersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeeInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Pulls down the services available for each biller.  &lt;br&gt;Certain billers will allow for Standard and/or Emergency payments.  &lt;br&gt;Standard payments will process in 2-3 business days. &lt;br&gt;Emergency Payments will process within 1 business day.  &lt;br&gt;Fees to charge for each of the available services will also be included.  &lt;br&gt;Results will also include Foreign Exchange Rate for each Biller.  &lt;br&gt;&lt;i&gt;&lt;font color='red'&gt;Foreign Exchange will change daily.&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFeeInfoSoapIn" />
+      <wsdl:output message="tns:GetFeeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFundingSource">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Retrieves the available funding sources for a specific customer.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFundingSourceSoapIn" />
+      <wsdl:output message="tns:GetFundingSourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Transmits payment information to iSend.  &lt;/br&gt;At the time of transmittal iSend will perform an edit check on the data and return a success or failure based on accuracy of data.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:PostPaymentSoapIn" />
+      <wsdl:output message="tns:PostPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSimplePayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Used when customer does not sign up for the service and only basic information is required.  &lt;/br&gt;Example of when to use this service is for Top-up transaction where only the account number and amount are required to post a payment.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:PostSimplePaymentSoapIn" />
+      <wsdl:output message="tns:PostSimplePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;After payment post process, this method is called to confirm (check) the processing status of payment.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmPaymentSoapIn" />
+      <wsdl:output message="tns:ConfirmPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Allows for payments to be canceled that have not already been processed by iSend.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CancelPaymentSoapIn" />
+      <wsdl:output message="tns:CancelPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelSimplePayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Cancels Post Simple Payment transactions.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CancelSimplePaymentSoapIn" />
+      <wsdl:output message="tns:CancelSimplePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndGetCustomer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Customer Management.  Allows for creation, updating and retrieval of one CustomerID at a time.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SaveAndGetCustomerSoapIn" />
+      <wsdl:output message="tns:SaveAndGetCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndGetBeneficiary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Allows for creation, updating and retrieval of information for one specific Beneficiary at a time.  &lt;/br&gt;Account numbers get sent to the Webservice.  Single payments will create a new beneficiary.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SaveAndGetBeneficiarySoapIn" />
+      <wsdl:output message="tns:SaveAndGetBeneficiarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBeneficiaryBills">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Allows for creation, updating and retrieval of information for one specific Beneficiary at a time.  &lt;/br&gt;Account numbers get sent to the Webservice.  Single payments will create a new beneficiary.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetBeneficiaryBillsSoapIn" />
+      <wsdl:output message="tns:GetBeneficiaryBillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCorpAgentBalance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Retrieves the current balance for the Corporate Agent.&lt;/br&gt;&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCorpAgentBalanceSoapIn" />
+      <wsdl:output message="tns:GetCorpAgentBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommissionRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Retrieves a list of billers with commission rates for this Agent showing the commission rate.&lt;/br&gt;&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCommissionRatesSoapIn" />
+      <wsdl:output message="tns:GetCommissionRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperators">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Retrieves a list of billers based on a phone. &lt;/br&gt;CountryID's are received from the GetCountry call. &lt;/br&gt;For each biller all info in the GetFeeInfo will be included.  &lt;/br&gt;For fixed amount Top Up transactions the biller will contain an equal Min and Max amount.  &lt;/br&gt;This is the amount the transaction must contain to be accepted (for example: $20.00 TelCel).&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetOperatorsSoapIn" />
+      <wsdl:output message="tns:GetOperatorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;Retrieves a list of Promotions. &lt;/br&gt;CountryID's are received from the GetCountry call. &lt;/br&gt;If CountryID=0, method will return all promotions</wsdl:documentation>
+      <wsdl:input message="tns:GetPromotionsSoapIn" />
+      <wsdl:output message="tns:GetPromotionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testDatabaseConn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;div style='background:#FFFFCC;'&gt;This will return the list of countries in string format.&lt;/div&gt;</wsdl:documentation>
+      <wsdl:input message="tns:testDatabaseConnSoapIn" />
+      <wsdl:output message="tns:testDatabaseConnSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="iSendServiceSoap" type="tns:iSendServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://isendonline.com/20080127/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentInfo">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetAgentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillers">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetBillers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeeInfo">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetFeeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFundingSource">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetFundingSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostPayment">
+      <soap:operation soapAction="http://isendonline.com/20080127/PostPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSimplePayment">
+      <soap:operation soapAction="http://isendonline.com/20080127/PostSimplePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPayment">
+      <soap:operation soapAction="http://isendonline.com/20080127/ConfirmPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelPayment">
+      <soap:operation soapAction="http://isendonline.com/20080127/CancelPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSimplePayment">
+      <soap:operation soapAction="http://isendonline.com/20080127/CancelSimplePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndGetCustomer">
+      <soap:operation soapAction="http://isendonline.com/20080127/SaveAndGetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndGetBeneficiary">
+      <soap:operation soapAction="http://isendonline.com/20080127/SaveAndGetBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeneficiaryBills">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetBeneficiaryBills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCorpAgentBalance">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetCorpAgentBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommissionRates">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetCommissionRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperators">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetOperators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotions">
+      <soap:operation soapAction="http://isendonline.com/20080127/GetPromotions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testDatabaseConn">
+      <soap:operation soapAction="http://isendonline.com/20080127/testDatabaseConn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="iSendServiceSoap12" type="tns:iSendServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://isendonline.com/20080127/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentInfo">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetAgentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillers">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetBillers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeeInfo">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetFeeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFundingSource">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetFundingSource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostPayment">
+      <soap12:operation soapAction="http://isendonline.com/20080127/PostPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSimplePayment">
+      <soap12:operation soapAction="http://isendonline.com/20080127/PostSimplePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPayment">
+      <soap12:operation soapAction="http://isendonline.com/20080127/ConfirmPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelPayment">
+      <soap12:operation soapAction="http://isendonline.com/20080127/CancelPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSimplePayment">
+      <soap12:operation soapAction="http://isendonline.com/20080127/CancelSimplePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndGetCustomer">
+      <soap12:operation soapAction="http://isendonline.com/20080127/SaveAndGetCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndGetBeneficiary">
+      <soap12:operation soapAction="http://isendonline.com/20080127/SaveAndGetBeneficiary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeneficiaryBills">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetBeneficiaryBills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCorpAgentBalance">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetCorpAgentBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommissionRates">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetCommissionRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperators">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetOperators" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotions">
+      <soap12:operation soapAction="http://isendonline.com/20080127/GetPromotions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testDatabaseConn">
+      <soap12:operation soapAction="http://isendonline.com/20080127/testDatabaseConn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="iSendService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Version:&lt;/b&gt; 2.2&lt;/br&gt;&lt;/br&gt;&lt;b&gt;Description:&lt;/b&gt;&lt;/br&gt;A retailer initiates a transaction at their point of sale (POS) system. &lt;/br&gt;Their transaction process formats the request according to the details of this document. &lt;/br&gt;The request is transmitted through a HTTPS request to the iSend server web services.  &lt;/br&gt;The iSend server confirms the transaction for accuracy and responds with the command response. &lt;/br&gt;The retailers server formats a receipt for printing at the POS and the employee completes the transaction.  &lt;/br&gt;Typical transactions would be cell-phone top up (Topup) or bill payments. &lt;/br&gt;Each transaction has specific data requirements and the retailer must provide this data for a transaction. &lt;/br&gt;Currency conversions are handled as necessary in the iSend server by the web services. &lt;/br&gt;&lt;/br&gt;&lt;b&gt;Technical Specs:&lt;/b&gt; &lt;a href='docs/iSendWebServiceTechnicalSpecs.pdf'&gt;iSendWebServiceTehnicalSpecs&lt;/a&gt;</wsdl:documentation>
+    <wsdl:port name="iSendServiceSoap" binding="tns:iSendServiceSoap">
+      <soap:address location="https://services.isendonline.com/isendwebservice/isend.asmx" />
+    </wsdl:port>
+    <wsdl:port name="iSendServiceSoap12" binding="tns:iSendServiceSoap12">
+      <soap12:address location="https://services.isendonline.com/isendwebservice/isend.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

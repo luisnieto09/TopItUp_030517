@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://services.isendonline.com/isendwebservice/isend.asmx?wsdl" docRef="https://services.isendonline.com/isendwebservice/isend.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://services.isendonline.com/isendwebservice/isend.asmx" xmlns:q1="http://isendonline.com/20080127" binding="q1:iSendServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://services.isendonline.com/isendwebservice/isend.asmx" xmlns:q2="http://isendonline.com/20080127" binding="q2:iSendServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

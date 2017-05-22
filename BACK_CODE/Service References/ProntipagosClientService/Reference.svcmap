@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="210317c1-61a3-4512-a1d6-985de3d96173" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProntipagosClientServiceEndPoint.xsd" MetadataType="Schema" ID="e17fa383-387d-4e78-9a47-bc995338e591" SourceId="1" SourceUrl="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint?xsd=1" />
+    <MetadataFile FileName="ProntipagosClientServiceEndPoint1.xsd" MetadataType="Schema" ID="858f9ffd-dbee-44f4-a472-0fbd5547d3bb" SourceId="1" SourceUrl="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint?xsd=2" />
+    <MetadataFile FileName="ProntipagosClientServiceEndPoint.wsdl" MetadataType="Wsdl" ID="0b283746-28ba-4600-9d0c-7a86c7fc6034" SourceId="1" SourceUrl="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

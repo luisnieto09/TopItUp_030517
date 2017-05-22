@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices/" targetNamespace="http://webservices/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="alive" type="tns:alive" />
+  <xs:element name="aliveResponse" type="tns:aliveResponse" />
+  <xs:element name="balanceRequest" type="tns:balanceRequest" />
+  <xs:element name="balanceRequestResponse" type="tns:balanceRequestResponse" />
+  <xs:element name="changePassword" type="tns:changePassword" />
+  <xs:element name="changePasswordResponse" type="tns:changePasswordResponse" />
+  <xs:element name="getProducts" type="tns:getProducts" />
+  <xs:element name="getProducts2" type="tns:getProducts2" />
+  <xs:element name="getProducts2Response" type="tns:getProducts2Response" />
+  <xs:element name="getProductsResponse" type="tns:getProductsResponse" />
+  <xs:element name="login" type="tns:login" />
+  <xs:element name="loginResponse" type="tns:loginResponse" />
+  <xs:element name="logout" type="tns:logout" />
+  <xs:element name="logoutResponse" type="tns:logoutResponse" />
+  <xs:element name="responseTelcel" type="tns:responseTelcel" />
+  <xs:element name="responseTelcelResponse" type="tns:responseTelcelResponse" />
+  <xs:element name="saleCheck" type="tns:saleCheck" />
+  <xs:element name="saleCheckResponse" type="tns:saleCheckResponse" />
+  <xs:element name="saleRequest" type="tns:saleRequest" />
+  <xs:element name="saleRequestResponse" type="tns:saleRequestResponse" />
+  <xs:element name="status" type="tns:status" />
+  <xs:element name="statusResponse" type="tns:statusResponse" />
+  <xs:complexType name="getProducts2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProducts2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="logout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="logoutResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="saleRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+      <xs:element name="storeId" type="xs:int" />
+      <xs:element minOccurs="0" name="accountNo" type="xs:string" />
+      <xs:element minOccurs="0" name="externalId" type="xs:string" />
+      <xs:element minOccurs="0" name="productId" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" type="xs:string" />
+      <xs:element minOccurs="0" name="amount" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saleRequestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="alive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aliveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseTelcel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseTelcelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="balanceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+      <xs:element name="companyId" type="xs:int" />
+      <xs:element name="storeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="balanceRequestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saleCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+      <xs:element minOccurs="0" name="externalId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saleCheckResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProducts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProductsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="company" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changePassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+      <xs:element minOccurs="0" name="company" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="password2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changePasswordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="statusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

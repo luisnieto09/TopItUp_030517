@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.usa.siveta.cm.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ProntipagosClientServiceEndPoint" targetNamespace="http://ws.usa.siveta.cm.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint?xsd=1" namespace="http://ws.usa.siveta.cm.com/" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint?xsd=2" namespace="http://siveta.ws.com" />
+    </xsd:schema>
+  </types>
+  <message name="checkStatusTopUp">
+    <part name="parameters" element="tns:checkStatusTopUp" />
+  </message>
+  <message name="checkStatusTopUpResponse">
+    <part name="parameters" element="tns:checkStatusTopUpResponse" />
+  </message>
+  <message name="WebServiceException">
+    <part name="fault" element="tns:WebServiceException" />
+  </message>
+  <message name="TransactionException">
+    <part name="fault" element="tns:TransactionException" />
+  </message>
+  <message name="ServiceException">
+    <part name="fault" element="tns:ServiceException" />
+  </message>
+  <message name="topUpPackage">
+    <part name="parameters" element="tns:topUpPackage" />
+  </message>
+  <message name="topUpPackageResponse">
+    <part name="parameters" element="tns:topUpPackageResponse" />
+  </message>
+  <message name="topUpTAE">
+    <part name="parameters" element="tns:topUpTAE" />
+  </message>
+  <message name="topUpTAEResponse">
+    <part name="parameters" element="tns:topUpTAEResponse" />
+  </message>
+  <message name="topUp">
+    <part name="parameters" element="tns:topUp" />
+  </message>
+  <message name="topUpResponse">
+    <part name="parameters" element="tns:topUpResponse" />
+  </message>
+  <portType name="ProntipagosClientServiceEndPoint">
+    <operation name="checkStatusTopUp">
+      <input wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/checkStatusTopUpRequest" message="tns:checkStatusTopUp" />
+      <output wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/checkStatusTopUpResponse" message="tns:checkStatusTopUpResponse" />
+      <fault wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/checkStatusTopUp/Fault/WebServiceException" name="WebServiceException" message="tns:WebServiceException" />
+      <fault wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/checkStatusTopUp/Fault/TransactionException" name="TransactionException" message="tns:TransactionException" />
+      <fault wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/checkStatusTopUp/Fault/ServiceException" name="ServiceException" message="tns:ServiceException" />
+    </operation>
+    <operation name="topUpPackage">
+      <input wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/topUpPackageRequest" message="tns:topUpPackage" />
+      <output wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/topUpPackageResponse" message="tns:topUpPackageResponse" />
+    </operation>
+    <operation name="topUpTAE">
+      <input wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/topUpTAERequest" message="tns:topUpTAE" />
+      <output wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/topUpTAEResponse" message="tns:topUpTAEResponse" />
+      <fault wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/topUpTAE/Fault/TransactionException" name="TransactionException" message="tns:TransactionException" />
+    </operation>
+    <operation name="topUp">
+      <input wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/topUpRequest" message="tns:topUp" />
+      <output wsam:Action="http://ws.usa.siveta.cm.com/ProntipagosClientServiceEndPoint/topUpResponse" message="tns:topUpResponse" />
+    </operation>
+  </portType>
+  <binding name="ProntipagosClientServiceEndPointPortBinding" type="tns:ProntipagosClientServiceEndPoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="checkStatusTopUp">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WebServiceException">
+        <soap:fault use="literal" name="WebServiceException" namespace="" />
+      </fault>
+      <fault name="TransactionException">
+        <soap:fault use="literal" name="TransactionException" namespace="" />
+      </fault>
+      <fault name="ServiceException">
+        <soap:fault use="literal" name="ServiceException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="topUpPackage">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="topUpTAE">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="TransactionException">
+        <soap:fault use="literal" name="TransactionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="topUp">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProntipagosClientServiceEndPoint">
+    <port name="ProntipagosClientServiceEndPointPort" binding="tns:ProntipagosClientServiceEndPointPortBinding">
+      <soap:address location="http://dev.tranbit.mx:28181/siveta-endpoint-ws-1.0-SNAPSHOT/ProntipagosClientServiceEndPoint" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="DMM" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="DMM" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="DMM">
+      <s:element name="atencion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="atencionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="atencionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="depositos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="depositosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="depositosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="moviaj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="moviajResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="moviajResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="movidj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="movidjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="movidjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="msnc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="msncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msncResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="msnldo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="msnldoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msnldoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="msn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="msnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="movidrj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="movidrjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="movidrjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saldoj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saldojResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saldojResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="java">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="javaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="javaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gprstae">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gprstaeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gprstaeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gprsaut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gprsautResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gprsautResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="movij">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="movijResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="movijResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="plugtae">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="plugtaeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plugtaeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TAE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="monto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="puntov" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TAEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TAEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TAESALDO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TAESALDOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TAESALDOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="atencionSoapIn">
+    <wsdl:part name="parameters" element="tns:atencion" />
+  </wsdl:message>
+  <wsdl:message name="atencionSoapOut">
+    <wsdl:part name="parameters" element="tns:atencionResponse" />
+  </wsdl:message>
+  <wsdl:message name="depositosSoapIn">
+    <wsdl:part name="parameters" element="tns:depositos" />
+  </wsdl:message>
+  <wsdl:message name="depositosSoapOut">
+    <wsdl:part name="parameters" element="tns:depositosResponse" />
+  </wsdl:message>
+  <wsdl:message name="moviajSoapIn">
+    <wsdl:part name="parameters" element="tns:moviaj" />
+  </wsdl:message>
+  <wsdl:message name="moviajSoapOut">
+    <wsdl:part name="parameters" element="tns:moviajResponse" />
+  </wsdl:message>
+  <wsdl:message name="movidjSoapIn">
+    <wsdl:part name="parameters" element="tns:movidj" />
+  </wsdl:message>
+  <wsdl:message name="movidjSoapOut">
+    <wsdl:part name="parameters" element="tns:movidjResponse" />
+  </wsdl:message>
+  <wsdl:message name="msncSoapIn">
+    <wsdl:part name="parameters" element="tns:msnc" />
+  </wsdl:message>
+  <wsdl:message name="msncSoapOut">
+    <wsdl:part name="parameters" element="tns:msncResponse" />
+  </wsdl:message>
+  <wsdl:message name="msnldoSoapIn">
+    <wsdl:part name="parameters" element="tns:msnldo" />
+  </wsdl:message>
+  <wsdl:message name="msnldoSoapOut">
+    <wsdl:part name="parameters" element="tns:msnldoResponse" />
+  </wsdl:message>
+  <wsdl:message name="msnSoapIn">
+    <wsdl:part name="parameters" element="tns:msn" />
+  </wsdl:message>
+  <wsdl:message name="msnSoapOut">
+    <wsdl:part name="parameters" element="tns:msnResponse" />
+  </wsdl:message>
+  <wsdl:message name="movidrjSoapIn">
+    <wsdl:part name="parameters" element="tns:movidrj" />
+  </wsdl:message>
+  <wsdl:message name="movidrjSoapOut">
+    <wsdl:part name="parameters" element="tns:movidrjResponse" />
+  </wsdl:message>
+  <wsdl:message name="saldojSoapIn">
+    <wsdl:part name="parameters" element="tns:saldoj" />
+  </wsdl:message>
+  <wsdl:message name="saldojSoapOut">
+    <wsdl:part name="parameters" element="tns:saldojResponse" />
+  </wsdl:message>
+  <wsdl:message name="javaSoapIn">
+    <wsdl:part name="parameters" element="tns:java" />
+  </wsdl:message>
+  <wsdl:message name="javaSoapOut">
+    <wsdl:part name="parameters" element="tns:javaResponse" />
+  </wsdl:message>
+  <wsdl:message name="gprstaeSoapIn">
+    <wsdl:part name="parameters" element="tns:gprstae" />
+  </wsdl:message>
+  <wsdl:message name="gprstaeSoapOut">
+    <wsdl:part name="parameters" element="tns:gprstaeResponse" />
+  </wsdl:message>
+  <wsdl:message name="gprsautSoapIn">
+    <wsdl:part name="parameters" element="tns:gprsaut" />
+  </wsdl:message>
+  <wsdl:message name="gprsautSoapOut">
+    <wsdl:part name="parameters" element="tns:gprsautResponse" />
+  </wsdl:message>
+  <wsdl:message name="movijSoapIn">
+    <wsdl:part name="parameters" element="tns:movij" />
+  </wsdl:message>
+  <wsdl:message name="movijSoapOut">
+    <wsdl:part name="parameters" element="tns:movijResponse" />
+  </wsdl:message>
+  <wsdl:message name="plugtaeSoapIn">
+    <wsdl:part name="parameters" element="tns:plugtae" />
+  </wsdl:message>
+  <wsdl:message name="plugtaeSoapOut">
+    <wsdl:part name="parameters" element="tns:plugtaeResponse" />
+  </wsdl:message>
+  <wsdl:message name="TAESoapIn">
+    <wsdl:part name="parameters" element="tns:TAE" />
+  </wsdl:message>
+  <wsdl:message name="TAESoapOut">
+    <wsdl:part name="parameters" element="tns:TAEResponse" />
+  </wsdl:message>
+  <wsdl:message name="TAESALDOSoapIn">
+    <wsdl:part name="parameters" element="tns:TAESALDO" />
+  </wsdl:message>
+  <wsdl:message name="TAESALDOSoapOut">
+    <wsdl:part name="parameters" element="tns:TAESALDOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Recargas_ElectronicasSoap">
+    <wsdl:operation name="atencion">
+      <wsdl:input message="tns:atencionSoapIn" />
+      <wsdl:output message="tns:atencionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="depositos">
+      <wsdl:input message="tns:depositosSoapIn" />
+      <wsdl:output message="tns:depositosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="moviaj">
+      <wsdl:input message="tns:moviajSoapIn" />
+      <wsdl:output message="tns:moviajSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="movidj">
+      <wsdl:input message="tns:movidjSoapIn" />
+      <wsdl:output message="tns:movidjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="msnc">
+      <wsdl:input message="tns:msncSoapIn" />
+      <wsdl:output message="tns:msncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="msnldo">
+      <wsdl:input message="tns:msnldoSoapIn" />
+      <wsdl:output message="tns:msnldoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="msn">
+      <wsdl:input message="tns:msnSoapIn" />
+      <wsdl:output message="tns:msnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="movidrj">
+      <wsdl:input message="tns:movidrjSoapIn" />
+      <wsdl:output message="tns:movidrjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saldoj">
+      <wsdl:input message="tns:saldojSoapIn" />
+      <wsdl:output message="tns:saldojSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="java">
+      <wsdl:input message="tns:javaSoapIn" />
+      <wsdl:output message="tns:javaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gprstae">
+      <wsdl:input message="tns:gprstaeSoapIn" />
+      <wsdl:output message="tns:gprstaeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gprsaut">
+      <wsdl:input message="tns:gprsautSoapIn" />
+      <wsdl:output message="tns:gprsautSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="movij">
+      <wsdl:input message="tns:movijSoapIn" />
+      <wsdl:output message="tns:movijSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="plugtae">
+      <wsdl:input message="tns:plugtaeSoapIn" />
+      <wsdl:output message="tns:plugtaeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TAE">
+      <wsdl:input message="tns:TAESoapIn" />
+      <wsdl:output message="tns:TAESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TAESALDO">
+      <wsdl:input message="tns:TAESALDOSoapIn" />
+      <wsdl:output message="tns:TAESALDOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Recargas_ElectronicasSoap" type="tns:Recargas_ElectronicasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="atencion">
+      <soap:operation soapAction="DMM/atencion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="depositos">
+      <soap:operation soapAction="DMM/depositos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moviaj">
+      <soap:operation soapAction="DMM/moviaj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="movidj">
+      <soap:operation soapAction="DMM/movidj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="msnc">
+      <soap:operation soapAction="DMM/msnc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="msnldo">
+      <soap:operation soapAction="DMM/msnldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="msn">
+      <soap:operation soapAction="DMM/msn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="movidrj">
+      <soap:operation soapAction="DMM/movidrj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saldoj">
+      <soap:operation soapAction="DMM/saldoj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="java">
+      <soap:operation soapAction="DMM/java" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gprstae">
+      <soap:operation soapAction="DMM/gprstae" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gprsaut">
+      <soap:operation soapAction="DMM/gprsaut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="movij">
+      <soap:operation soapAction="DMM/movij" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="plugtae">
+      <soap:operation soapAction="DMM/plugtae" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TAE">
+      <soap:operation soapAction="DMM/TAE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TAESALDO">
+      <soap:operation soapAction="DMM/TAESALDO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Recargas_ElectronicasSoap12" type="tns:Recargas_ElectronicasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="atencion">
+      <soap12:operation soapAction="DMM/atencion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="depositos">
+      <soap12:operation soapAction="DMM/depositos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moviaj">
+      <soap12:operation soapAction="DMM/moviaj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="movidj">
+      <soap12:operation soapAction="DMM/movidj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="msnc">
+      <soap12:operation soapAction="DMM/msnc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="msnldo">
+      <soap12:operation soapAction="DMM/msnldo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="msn">
+      <soap12:operation soapAction="DMM/msn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="movidrj">
+      <soap12:operation soapAction="DMM/movidrj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saldoj">
+      <soap12:operation soapAction="DMM/saldoj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="java">
+      <soap12:operation soapAction="DMM/java" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gprstae">
+      <soap12:operation soapAction="DMM/gprstae" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gprsaut">
+      <soap12:operation soapAction="DMM/gprsaut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="movij">
+      <soap12:operation soapAction="DMM/movij" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="plugtae">
+      <soap12:operation soapAction="DMM/plugtae" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TAE">
+      <soap12:operation soapAction="DMM/TAE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TAESALDO">
+      <soap12:operation soapAction="DMM/TAESALDO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Recargas_Electronicas">
+    <wsdl:port name="Recargas_ElectronicasSoap" binding="tns:Recargas_ElectronicasSoap">
+      <soap:address location="http://www2.itmultiwebservice.net/wsdmm/fdmm.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Recargas_ElectronicasSoap12" binding="tns:Recargas_ElectronicasSoap12">
+      <soap12:address location="http://www2.itmultiwebservice.net/wsdmm/fdmm.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

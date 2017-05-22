@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://siveta.ws.com" targetNamespace="http://siveta.ws.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TransactionException" type="tns:TransactionException" />
+  <xs:element name="WebServiceException" type="tns:WebServiceException" />
+  <xs:complexType name="TransactionException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WebServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

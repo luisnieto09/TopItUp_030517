@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="serviceService" targetNamespace="http://webservices/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://54.186.116.49:8080/WSINTEGRA/service?xsd=1" namespace="http://webservices/" />
+    </xsd:schema>
+  </types>
+  <message name="changePassword">
+    <part name="parameters" element="tns:changePassword" />
+  </message>
+  <message name="changePasswordResponse">
+    <part name="parameters" element="tns:changePasswordResponse" />
+  </message>
+  <message name="getProducts">
+    <part name="parameters" element="tns:getProducts" />
+  </message>
+  <message name="getProductsResponse">
+    <part name="parameters" element="tns:getProductsResponse" />
+  </message>
+  <message name="balanceRequest">
+    <part name="parameters" element="tns:balanceRequest" />
+  </message>
+  <message name="balanceRequestResponse">
+    <part name="parameters" element="tns:balanceRequestResponse" />
+  </message>
+  <message name="responseTelcel">
+    <part name="parameters" element="tns:responseTelcel" />
+  </message>
+  <message name="responseTelcelResponse">
+    <part name="parameters" element="tns:responseTelcelResponse" />
+  </message>
+  <message name="alive">
+    <part name="parameters" element="tns:alive" />
+  </message>
+  <message name="aliveResponse">
+    <part name="parameters" element="tns:aliveResponse" />
+  </message>
+  <message name="saleRequest">
+    <part name="parameters" element="tns:saleRequest" />
+  </message>
+  <message name="saleRequestResponse">
+    <part name="parameters" element="tns:saleRequestResponse" />
+  </message>
+  <message name="saleCheck">
+    <part name="parameters" element="tns:saleCheck" />
+  </message>
+  <message name="saleCheckResponse">
+    <part name="parameters" element="tns:saleCheckResponse" />
+  </message>
+  <message name="getProducts2">
+    <part name="parameters" element="tns:getProducts2" />
+  </message>
+  <message name="getProducts2Response">
+    <part name="parameters" element="tns:getProducts2Response" />
+  </message>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="tns:loginResponse" />
+  </message>
+  <message name="logout">
+    <part name="parameters" element="tns:logout" />
+  </message>
+  <message name="logoutResponse">
+    <part name="parameters" element="tns:logoutResponse" />
+  </message>
+  <message name="status">
+    <part name="parameters" element="tns:status" />
+  </message>
+  <message name="statusResponse">
+    <part name="parameters" element="tns:statusResponse" />
+  </message>
+  <portType name="service">
+    <operation name="changePassword">
+      <input wsam:Action="http://webservices/service/changePasswordRequest" message="tns:changePassword" />
+      <output wsam:Action="http://webservices/service/changePasswordResponse" message="tns:changePasswordResponse" />
+    </operation>
+    <operation name="getProducts">
+      <input wsam:Action="http://webservices/service/getProductsRequest" message="tns:getProducts" />
+      <output wsam:Action="http://webservices/service/getProductsResponse" message="tns:getProductsResponse" />
+    </operation>
+    <operation name="balanceRequest">
+      <input wsam:Action="http://webservices/service/balanceRequestRequest" message="tns:balanceRequest" />
+      <output wsam:Action="http://webservices/service/balanceRequestResponse" message="tns:balanceRequestResponse" />
+    </operation>
+    <operation name="responseTelcel">
+      <input wsam:Action="http://webservices/service/responseTelcelRequest" message="tns:responseTelcel" />
+      <output wsam:Action="http://webservices/service/responseTelcelResponse" message="tns:responseTelcelResponse" />
+    </operation>
+    <operation name="alive">
+      <input wsam:Action="http://webservices/service/aliveRequest" message="tns:alive" />
+      <output wsam:Action="http://webservices/service/aliveResponse" message="tns:aliveResponse" />
+    </operation>
+    <operation name="saleRequest">
+      <input wsam:Action="http://webservices/service/saleRequestRequest" message="tns:saleRequest" />
+      <output wsam:Action="http://webservices/service/saleRequestResponse" message="tns:saleRequestResponse" />
+    </operation>
+    <operation name="saleCheck">
+      <input wsam:Action="http://webservices/service/saleCheckRequest" message="tns:saleCheck" />
+      <output wsam:Action="http://webservices/service/saleCheckResponse" message="tns:saleCheckResponse" />
+    </operation>
+    <operation name="getProducts2">
+      <input wsam:Action="http://webservices/service/getProducts2Request" message="tns:getProducts2" />
+      <output wsam:Action="http://webservices/service/getProducts2Response" message="tns:getProducts2Response" />
+    </operation>
+    <operation name="login">
+      <input wsam:Action="http://webservices/service/loginRequest" message="tns:login" />
+      <output wsam:Action="http://webservices/service/loginResponse" message="tns:loginResponse" />
+    </operation>
+    <operation name="logout">
+      <input wsam:Action="http://webservices/service/logoutRequest" message="tns:logout" />
+      <output wsam:Action="http://webservices/service/logoutResponse" message="tns:logoutResponse" />
+    </operation>
+    <operation name="status">
+      <input wsam:Action="http://webservices/service/statusRequest" message="tns:status" />
+      <output wsam:Action="http://webservices/service/statusResponse" message="tns:statusResponse" />
+    </operation>
+  </portType>
+  <binding name="servicePortBinding" type="tns:service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="changePassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProducts">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="balanceRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="responseTelcel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="alive">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saleRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saleCheck">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProducts2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="logout">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="status">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="serviceService">
+    <port name="servicePort" binding="tns:servicePortBinding">
+      <soap:address location="http://54.186.116.49:8080/WSINTEGRA/service" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{200CA43B-4FAF-48E7-A50A-15AAA9DCE5E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BACK_CODE</RootNamespace>
+    <AssemblyName>BACK_CODE</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>BACK_CODE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>BACK_CODE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="COMMUN\Cripto.vb" />
+    <Compile Include="COMMUN\EnviaCorreo.vb" />
+    <Compile Include="COMMUN\fromstringxml.vb" />
+    <Compile Include="INTEGRA\IntegraWsDatos.vb" />
+    <Compile Include="iSend\ServiceIsend.vb" />
+    <Compile Include="MULTIWEBSERVICE\MultiWebServiceMX.vb" />
+    <Compile Include="MULTIWEBSERVICE\MultiWebServiceUSA.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PROCOMDATOS\ProcomDtos.vb" />
+    <Compile Include="PRONTIPAGOS\VENTATELCEL.vb" />
+    <Compile Include="Service References\IntegraWs\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\net.Recargas_Electronicas.MX\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProcomServiceRef\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProntipagosClientService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProntipagosService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProntipagosTopUpService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReferenceIsend\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TerriaService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.isendonline.test\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\net.itmultiwebservice.www\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\us.multiprepagos.ws\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.aliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.balanceRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.changePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.getProducts2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.getProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.loginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.logoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.responseTelcelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.saleCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.saleRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\BACK_CODE.IntegraWs.statusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegraWs\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegraWs\serviceService.wsdl" />
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.atencionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.depositosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.gprsautResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.gprstaeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.javaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.moviajResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.movidjResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.movidrjResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.movijResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.msncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.msnldoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.msnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.plugtaeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.saldojResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.TAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\BACK_CODE.net.Recargas_Electronicas.MX.TAESALDOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\net.Recargas_Electronicas.MX\fdmm.wsdl" />
+    <None Include="Service References\ProcomServiceRef\BACK_CODE.ProcomServiceRef.AccountResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcomServiceRef\BACK_CODE.ProcomServiceRef.BalanceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcomServiceRef\BACK_CODE.ProcomServiceRef.DepositResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcomServiceRef\BACK_CODE.ProcomServiceRef.RecargaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcomServiceRef\BACK_CODE.ProcomServiceRef.ServiceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcomServiceRef\BACK_CODE.ProcomServiceRef.TransactionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcomServiceRef\pos.wsdl" />
+    <None Include="Service References\ProntipagosClientService\BACK_CODE.ProntipagosClientService.checkStatusTopUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosClientService\BACK_CODE.ProntipagosClientService.sellResponseTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosClientService\BACK_CODE.ProntipagosClientService.topUpPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosClientService\BACK_CODE.ProntipagosClientService.topUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosClientService\BACK_CODE.ProntipagosClientService.topUpTAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosClientService\BACK_CODE.ProntipagosClientService.transactionResponseDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosClientService\BACK_CODE.ProntipagosClientService.transactionResponseTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosClientService\ProntipagosClientServiceEndPoint.wsdl" />
+    <None Include="Service References\ProntipagosClientService\ProntipagosClientServiceEndPoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProntipagosClientService\ProntipagosClientServiceEndPoint1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.changePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.checkClientBalancesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.checkStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.errorResponseTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.obtainCatalogProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.responseBalanceTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.responseCatalogProductTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.sellPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.sellResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.sellResponseTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.sellTAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.transactionResponseDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\BACK_CODE.ProntipagosService.transactionResponseTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosService\ProntipagosServiceEndPoint.wsdl" />
+    <None Include="Service References\ProntipagosService\ProntipagosServiceEndPoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.balanceServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.checkStatusServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.obtainCatalogProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.responseBalanceTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.responseCatalogProductTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.sellServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.transactionResponseDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\BACK_CODE.ProntipagosTopUpService.transactionResponseTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\ProntipagosTopUpServiceEndPoint.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\ProntipagosTopUpServiceEndPoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProntipagosTopUpService\ProntipagosTopUpServiceEndPoint1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.CancelPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.GetAgentInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.GetBeneficiaryBillsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.GetCommissionRatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.GetCorpAgentBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.GetFeeInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.GetFundingSourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.ListOfBillersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.ListOfCountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.ListOfPromotionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.PostPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.SaveAndGetBeneficiaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\BACK_CODE.ReferenceIsend.SaveAndGetCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReferenceIsend\isend.wsdl" />
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.aliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.balanceRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.changePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.getProducts2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.getProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.loginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.logoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.responseTelcelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.saleCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.saleRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\BACK_CODE.TerriaService.statusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TerriaService\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TerriaService\ServiceService.wsdl" />
+    <None Include="Web References\com.isendonline.test\CancelPaymentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\GetAgentInfoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\GetBeneficiaryBillsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\GetCommissionRatesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\GetCorpAgentBalanceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\GetFeeInfoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\GetFundingSourcesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\iSend.wsdl" />
+    <None Include="Web References\com.isendonline.test\ListOfBillersResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\ListOfCountryResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\ListOfPromotionsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\PostPaymentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.isendonline.test\SaveAndGetBeneficiaryResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.isendonline.test\SaveAndGetCustomerResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.itmultiwebservice.www\fdmm.wsdl" />
+    <None Include="Web References\net.itmultiwebservice.www\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\us.multiprepagos.ws\fdmm.wsdl" />
+    <None Include="Web References\us.multiprepagos.ws\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\IntegraWs\" />
+    <WCFMetadataStorage Include="Service References\net.Recargas_Electronicas.MX\" />
+    <WCFMetadataStorage Include="Service References\ProcomServiceRef\" />
+    <WCFMetadataStorage Include="Service References\ProntipagosClientService\" />
+    <WCFMetadataStorage Include="Service References\ProntipagosService\" />
+    <WCFMetadataStorage Include="Service References\ProntipagosTopUpService\" />
+    <WCFMetadataStorage Include="Service References\ReferenceIsend\" />
+    <WCFMetadataStorage Include="Service References\TerriaService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosClientService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosClientService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosClientService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosTopUpService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosTopUpService\configuration.svcinfo">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProntipagosTopUpService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ws.multiprepagos.us/integracion/fdmm.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\us.multiprepagos.ws\</RelPath>
+      <UpdateFromURL>http://ws.multiprepagos.us/integracion/fdmm.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BACK_CODE_us_multiprepagos_ws_Recargas_Electronicas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.itmultiwebservice.net/wsdmm/fdmm.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\net.itmultiwebservice.www\</RelPath>
+      <UpdateFromURL>http://www.itmultiwebservice.net/wsdmm/fdmm.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BACK_CODE_net_itmultiwebservice_www_Recargas_Electronicas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://services.isendonline.com/isendwebservice/isend.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.isendonline.test\</RelPath>
+      <UpdateFromURL>https://services.isendonline.com/isendwebservice/isend.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BACK_CODE_com_isendonline_test_iSendService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\net.itmultiwebservice.www\fdmm.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\us.multiprepagos.ws\fdmm.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\net.Recargas_Electronicas.MX\fdmm.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\net.Recargas_Electronicas.MX\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\net.Recargas_Electronicas.MX\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\net.Recargas_Electronicas.MX\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BD\" />
+    <Folder Include="Dacs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.isendonline.test\iSend.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReferenceIsend\isend.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReferenceIsend\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReferenceIsend\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReferenceIsend\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntegraWs\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntegraWs\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntegraWs\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TerriaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TerriaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TerriaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProcomServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProcomServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProcomServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

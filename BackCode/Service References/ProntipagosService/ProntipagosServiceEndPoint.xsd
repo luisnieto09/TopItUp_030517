@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://siveta.ws.com" targetNamespace="http://siveta.ws.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TransactionException" type="tns:TransactionException" />
+  <xs:element name="WebServiceException" type="tns:WebServiceException" />
+  <xs:element name="changePassword" type="tns:changePassword" />
+  <xs:element name="changePasswordResponse" type="tns:changePasswordResponse" />
+  <xs:element name="checkClientBalances" type="tns:checkClientBalances" />
+  <xs:element name="checkClientBalancesResponse" type="tns:checkClientBalancesResponse" />
+  <xs:element name="checkStatus" type="tns:checkStatus" />
+  <xs:element name="checkStatusResponse" type="tns:checkStatusResponse" />
+  <xs:element name="obtainCatalogProducts" type="tns:obtainCatalogProducts" />
+  <xs:element name="obtainCatalogProductsResponse" type="tns:obtainCatalogProductsResponse" />
+  <xs:element name="sell" type="tns:sell" />
+  <xs:element name="sellPackage" type="tns:sellPackage" />
+  <xs:element name="sellPackageResponse" type="tns:sellPackageResponse" />
+  <xs:element name="sellResponse" type="tns:sellResponse" />
+  <xs:element name="sellTAE" type="tns:sellTAE" />
+  <xs:element name="sellTAEResponse" type="tns:sellTAEResponse" />
+  <xs:complexType name="sellPackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="reference" type="xs:string" />
+      <xs:element minOccurs="0" name="sku" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sellPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:sellResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sellResponseTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionCode" type="tns:transactionResponseCode" />
+      <xs:element name="transactionStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="transactionId" type="xs:long" />
+      <xs:element minOccurs="0" name="transactionFolio" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtainCatalogProducts">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtainCatalogProductsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseCatalogProductTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseCatalogProductTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorResponseTO" type="tns:errorResponseTO" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="products" nillable="true" type="tns:productWsTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="errorResponseTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:string" />
+      <xs:element minOccurs="0" name="errorDesc" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="productWsTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element name="fixedFee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="productName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="referencesProductsList" nillable="true" type="tns:referencesProductsTO" />
+      <xs:element minOccurs="0" name="sku" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="referencesProductsTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alterUser" type="xs:long" />
+          <xs:element minOccurs="0" name="alteredDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="confirmation" type="xs:long" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createUser" type="xs:long" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="productId" type="xs:long" />
+          <xs:element minOccurs="0" name="reference" type="xs:string" />
+          <xs:element minOccurs="0" name="regex" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="dto" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="checkStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="checkStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transactionResponseTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="statusTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="codeDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="dateTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionId" type="xs:string" />
+          <xs:element minOccurs="0" name="folioTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionStatusDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="additionalInfo" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WebServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sell">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="reference" type="xs:string" />
+      <xs:element minOccurs="0" name="sku" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sellResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:sellResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sellTAE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="msisdn" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sellTAEResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionResponseDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transactionResponseDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codeDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="codeTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="dateTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="folioTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="statusTransaction" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changePassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oldPassword" type="xs:string" />
+      <xs:element minOccurs="0" name="newPassword" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changePasswordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:errorResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="checkClientBalances">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="checkClientBalancesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseBalanceTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseBalanceTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="balances" nillable="true" type="tns:balanceTO" />
+      <xs:element minOccurs="0" name="errorResponseTO" type="tns:errorResponseTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="balanceTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="balance" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="transactionResponseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESSFUL_TX" />
+      <xs:enumeration value="INVALID_PHONE" />
+      <xs:enumeration value="DESTINATION_UNAVAILABLE" />
+      <xs:enumeration value="INVALID_AMOUNT" />
+      <xs:enumeration value="CANNOT_PROCESS_PHONE" />
+      <xs:enumeration value="UNAVAILABLE_CREDIT" />
+      <xs:enumeration value="TELCEL_MAINTENANCE" />
+      <xs:enumeration value="TX_TABLE_FULL" />
+      <xs:enumeration value="INTERNAL_TIMEOUT" />
+      <xs:enumeration value="UNAVAILABLE_AUTHORIZATOR" />
+      <xs:enumeration value="UNAVAILABLE_PRODUCT" />
+      <xs:enumeration value="NO_ACCOUNT_ASSOCIATED" />
+      <xs:enumeration value="NOT_AUTHORIZED_TO_SELL" />
+      <xs:enumeration value="INVALID_TICKET" />
+      <xs:enumeration value="SYSTEM_MAINTENANCE" />
+      <xs:enumeration value="AREA_CODE_NOT_ASSIGNED" />
+      <xs:enumeration value="TX_TIMEOUT" />
+      <xs:enumeration value="INSUFFICIENT_DATA" />
+      <xs:enumeration value="TX_INVALID_TRXID" />
+      <xs:enumeration value="INVALID_MSISDN" />
+      <xs:enumeration value="INVALID_KEYWORD" />
+      <xs:enumeration value="INVALID_USER" />
+      <xs:enumeration value="NOT_ALLOW_USER" />
+      <xs:enumeration value="MORE_THAN_ONE_SKU" />
+      <xs:enumeration value="ERROR_SELL" />
+      <xs:enumeration value="ERROR_WS" />
+      <xs:enumeration value="ERROR_HTTP_SESSION" />
+      <xs:enumeration value="PROCESSING_TRANSACTION" />
+      <xs:enumeration value="INVALID_SOURCE_ACCOUNT" />
+      <xs:enumeration value="INVALID_DESTINATION_ACCOUNT" />
+      <xs:enumeration value="INVALID_MAIL" />
+      <xs:enumeration value="NOT_ALLOWED_NODE_TYPE" />
+      <xs:enumeration value="UPDATE_SUCCESS" />
+      <xs:enumeration value="DUPLICATE_NODE_OR_USER" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

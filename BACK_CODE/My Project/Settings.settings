@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="BACK_CODE_net_itmultiwebservice_www_Recargas_Electronicas" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www2.itmultiwebservice.net/wsdmm/fdmm.asmx</Value>
+    </Setting>
+    <Setting Name="BACK_CODE_us_multiprepagos_ws_Recargas_Electronicas" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.multiprepagos.us/integracion/fdmm.asmx</Value>
+    </Setting>
+    <Setting Name="BACK_CODE_com_isendonline_test_iSendService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://services.isendonline.com/isendwebservice/isend.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

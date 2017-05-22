@@ -1,0 +1,1037 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TopItUp</RootNamespace>
+    <AssemblyName>TopItUp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebForms_Basic.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <PublishDatabases>true</PublishDatabases>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebForms_Basic.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.2.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.15.1.2.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Controles\Menu.ascx" />
+    <Content Include="Controles\Noticia.ascx" />
+    <Content Include="Controles\TopBar.ascx" />
+    <Content Include="Images\250.png" />
+    <Content Include="Images\40.png" />
+    <Content Include="Images\backgroundbase.jpg" />
+    <Content Include="Images\backgroundbase2.jpg" />
+    <Content Include="Images\ejemplo1.PNG" />
+    <Content Include="Images\ejemplo2.PNG" />
+    <Content Include="Images\fondo.png" />
+    <Content Include="Images\image.png" />
+    <Content Include="Images\logosml-u87.png" />
+    <Content Include="Images\logo_cierto.png" />
+    <Content Include="Images\logo_iusacel.png" />
+    <Content Include="Images\logo_movistar.png" />
+    <Content Include="Images\logo_nextel.png" />
+    <Content Include="Images\logo_telcel.png" />
+    <Content Include="Images\logo_unefon.png" />
+    <Content Include="Images\logo_virgin.png" />
+    <Content Include="Images\MULTIMARCAS1.png" />
+    <Content Include="Images\procesa2.gif" />
+    <Content Include="Images\procesandoimg.gif" />
+    <Content Include="Images\recargamultimarcas.png" />
+    <Content Include="Images\recargastelcel.png" />
+    <Content Include="Images\telcel1.png" />
+    <Content Include="Mudanza.aspx" />
+    <Content Include="Otras.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\10.png" />
+    <Content Include="Images\100.png" />
+    <Content Include="Images\1000.png" />
+    <Content Include="Images\120.png" />
+    <Content Include="Images\150.png" />
+    <Content Include="Images\20.png" />
+    <Content Include="Images\200.png" />
+    <Content Include="Images\30.png" />
+    <Content Include="Images\300.png" />
+    <Content Include="Images\35.png" />
+    <Content Include="Images\400.png" />
+    <Content Include="Images\50.png" />
+    <Content Include="Images\500.png" />
+    <Content Include="Images\55.png" />
+    <Content Include="Images\60.png" />
+    <Content Include="Images\65.png" />
+    <Content Include="Images\750.png" />
+    <Content Include="Images\activar.png" />
+    <Content Include="Images\activarcajero.png" />
+    <Content Include="Images\activarcliente.png" />
+    <Content Include="Images\aplicar.png" />
+    <Content Include="Images\autorizar.png" />
+    <Content Include="Images\autorizardeposito.png" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\backgroundOtras.jpg" />
+    <Content Include="Images\backmenu.png" />
+    <Content Include="Images\backmenuOtras.png" />
+    <Content Include="Images\btnEnviar.png" />
+    <Content Include="Images\cajeros.png" />
+    <Content Include="Images\comisiones.png" />
+    <Content Include="Images\continente.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\depositos.png" />
+    <Content Include="Images\desbloquear.png" />
+    <Content Include="Images\enviar.png" />
+    <Content Include="Images\enviardeposito.png" />
+    <Content Include="Images\exportar.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logomits.png" />
+    <Content Include="Images\logoTelcel.png" />
+    <Content Include="Images\puntooff.png" />
+    <Content Include="Images\puntoon.png" />
+    <Content Include="Images\rechazardeposito.png" />
+    <Content Include="Images\seleccionararchivo.png" />
+    <Content Include="Images\semitransparente.png" />
+    <Content Include="Images\servicios_axtel.jpg" />
+    <Content Include="Images\servicios_cablemas.jpg" />
+    <Content Include="Images\servicios_cfe.jpg" />
+    <Content Include="Images\servicios_dish.jpg" />
+    <Content Include="Images\servicios_ecogas.jpg" />
+    <Content Include="Images\servicios_gasnatural.jpg" />
+    <Content Include="Images\servicios_gobdf.jpg" />
+    <Content Include="Images\servicios_infonavit.jpg" />
+    <Content Include="Images\servicios_maxcom.jpg" />
+    <Content Include="Images\servicios_megacable.jpg" />
+    <Content Include="Images\servicios_multimedios.jpg" />
+    <Content Include="Images\servicios_sky.jpg" />
+    <Content Include="Images\servicios_telmex.jpg" />
+    <Content Include="Images\servicios_telnor.jpg" />
+    <Content Include="Images\TiraAzul.png" />
+    <Content Include="Images\ventas.png" />
+    <Content Include="Images\verdepositosrechazados.png" />
+    <Content Include="Images\verlistaclientes.png" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Handler\HandlerDescargaExcel.ashx" />
+    <EntityDeploy Include="EDM_TopItUp\EDM_TopItUp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EDM_TopItUp.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EDM_TopItUp\EDM_TopItUp.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDM_TopItUp.edmx</DependentUpon>
+      <LastGenOutput>EDM_TopItUp.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="EDM_TopItUp\EDM_TopItUp.edmx.diagram">
+      <DependentUpon>EDM_TopItUp.edmx</DependentUpon>
+    </Content>
+    <Content Include="EDM_TopItUp\EDM_TopItUp.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDM_TopItUp.edmx</DependentUpon>
+      <LastGenOutput>EDM_TopItUp.vb</LastGenOutput>
+    </Content>
+    <Content Include="Images\Thumbs.db" />
+    <None Include="My Project\PublishProfiles\mits-topitup - FTP.pubxml" />
+    <None Include="My Project\PublishProfiles\mits-topitup - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Pages\Activacion.aspx" />
+    <Content Include="Pages\Cajas.aspx" />
+    <Content Include="Pages\Caracteristica.aspx" />
+    <Content Include="Pages\ctasBancariass.aspx" />
+    <Content Include="Pages\CtesConsulta.aspx" />
+    <Content Include="Pages\EdoCta.aspx" />
+    <Content Include="Pages\CambiarPsw.aspx" />
+    <Content Include="Pages\Noticias.aspx" />
+    <Content Include="Pages\RegistroRapido.aspx" />
+    <Content Include="Pages\Reportes.aspx" />
+    <Content Include="Pages\Salir.aspx" />
+    <Content Include="Pages\TaeFast.aspx" />
+    <Content Include="Pages\Tras.aspx" />
+    <Content Include="Pages\AtCtes.aspx" />
+    <Content Include="Pages\DesbloqueaUser.aspx" />
+    <Content Include="Pages\Deps.aspx" />
+    <Content Include="Pages\Ctes.aspx" />
+    <Content Include="Pages\PagoServ.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Validaciones.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Pages\TAElectronico.aspx" />
+    <Content Include="Web References\com.isendonline.test\CancelPaymentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\GetAgentInfoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\GetBeneficiaryBillsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\GetCommissionRatesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\GetCorpAgentBalanceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\GetFeeInfoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\GetFundingSourcesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\iSend.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Web References\com.isendonline.test\iSend.wsdl" />
+    <Content Include="Web References\com.isendonline.test\ListOfBillersResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\ListOfCountryResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\ListOfPromotionsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\PostPaymentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\SaveAndGetBeneficiaryResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\com.isendonline.test\SaveAndGetCustomerResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.vb" />
+    <Compile Include="App_Start\IdentityConfig.vb" />
+    <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="About.aspx.designer.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_Start\Startup.Auth.vb" />
+    <Compile Include="BD\BDAccess.vb" />
+    <Compile Include="Comun\BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comun\Constantes.vb" />
+    <Compile Include="Comun\EnumSistemas.vb" />
+    <Compile Include="Comun\ExportarExcel.vb" />
+    <Compile Include="Comun\fromxmlstring.vb" />
+    <Compile Include="Comun\Util_Arma_URL.vb" />
+    <Compile Include="Comun\Util_URL.vb" />
+    <Compile Include="Contact.aspx.designer.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Controles\HeadBar.vb" />
+    <Compile Include="Controles\Menu.ascx.designer.vb">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Menu.ascx.vb">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Noticia.ascx.designer.vb">
+      <DependentUpon>Noticia.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Noticia.ascx.vb">
+      <DependentUpon>Noticia.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TopBar.ascx.designer.vb">
+      <DependentUpon>TopBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TopBar.ascx.vb">
+      <DependentUpon>TopBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DACS\MostrarHastaDac.vb" />
+    <Compile Include="DACS\ComisionesDac.vb" />
+    <Compile Include="DACS\DetalleClientesDac.vb" />
+    <Compile Include="DACS\EdoCuentaResult.vb" />
+    <Compile Include="DACS\ReporteHorasDac.vb" />
+    <Compile Include="DACS\reportetraspasos.vb" />
+    <Compile Include="EDM_TopItUp\CAJEROS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_MOSTRAR_HASTA.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\COMISIONES_SP_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\EDM_TopItUp.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDM_TopItUp.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\EDM_TopItUp.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\HORARIO_CAJERO.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\INTEGRATICKETS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\INTEGRA_TICKETS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\NVOINTEGRATICKET.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\ObtieneColumnasTabla_SP_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\REGISTRO_RAPIDO.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_cat_mostrar_hasta_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sysdiagrams.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\TiempoAireTransact.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\to_sp_consultaMapeoSkuPlanes1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\to_sp_consultaMapeoSkuPlanes_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\to_sp_consultaMapeoSkuServicios1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\to_sp_consultaMapeoSkuServicios_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\to_sp_consultaMapeoSkuTiempoAire1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\to_sp_consultaMapeoSkuTiempoAire_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\TRANSACCIONES_CAJERO.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_consultaTelefonias1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_consultaTelefonias_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_consultaUsuario1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_consultaUsuario_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_obtieneCodigosErrorServicios1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_obtieneCodigosErrorServicios_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_obtieneDetalleTransacciones_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_selectMovimientos1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_selectMovimientos_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_selectTiempoAireTransact1_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_selectTiempoAireTransact_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\WCF.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\WCF_USEREXTERNALCODE.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\WCF_USERTRANSACTIONS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\WCF_USERTRANSACTIONSS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\WSF_USERTRANSACTIONS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\clsMostrarHasta.vb" />
+    <Compile Include="Entities\ComisionesGrid.vb" />
+    <Compile Include="Entities\DetalleClientes.vb" />
+    <Compile Include="Entities\ReporteHorasDetail.vb" />
+    <Compile Include="Entities\traspasosentities.vb" />
+    <Compile Include="Mudanza.aspx.designer.vb">
+      <DependentUpon>Mudanza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mudanza.aspx.vb">
+      <DependentUpon>Mudanza.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Otras.aspx.designer.vb">
+      <DependentUpon>Otras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Otras.aspx.vb">
+      <DependentUpon>Otras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EDM_TopItUp\ACCESOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\ACCESS_GROUPS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_BANCOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_MEDIOS_DE_PAGO.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_MONEDAS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_MONTOS_DISPONIBLES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_PAISES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_RAZONES_SOCIALES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_SERVICIOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_STATUS_PAGOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_TELEFONIAS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_TIPOS_MVTO.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CAT_WS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CLIENTES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\CLIENTES_USERS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\clsGenerics.vb" />
+    <Compile Include="EDM_TopItUp\CTAS_BANCARIAS_EMPRESAS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\DUDAS_COMENTARIOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\EDM_TopItUp.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDM_TopItUp.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\EMPRESAS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\FILES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\Get_Noticias_Usuario_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\Get_TransServiceByUSer_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\LLAVES_TRANS_SODESI_PRONTIPAGOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\NOTICIAS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\NOTICIAS_CLIENTES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\PAGES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\PAGES_ACCESS_GROUPS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\PAGES_USERS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\PAGOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\PAGOS_FILES_UPLOADED.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\PARAMETROS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\SALDOS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\SERVICIOS_CLIENTE_REL.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_GetDepositos_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_GetEdoCtaByPkUser_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_GetListaClientes_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_Depositos_Recibidos_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_MvtosTiempoAire_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_Traspasos_Otros_Cargos_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_UltimosMvtosTodosLosCtes_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_Ventas_clientes_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_Ventas_compañia_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\sp_get_Ventas_Hora_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\TELEFONIAS_CLIENTES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\TELEFONIAS_PAISES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\TRANSACCIONES.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\USERS.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\HandlerDescargaExcel.ashx.vb">
+      <DependentUpon>HandlerDescargaExcel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pages\Activacion.aspx.designer.vb">
+      <DependentUpon>Activacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Activacion.aspx.vb">
+      <DependentUpon>Activacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Cajas.aspx.designer.vb">
+      <DependentUpon>Cajas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cajas.aspx.vb">
+      <DependentUpon>Cajas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Caracteristica.aspx.designer.vb">
+      <DependentUpon>Caracteristica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Caracteristica.aspx.vb">
+      <DependentUpon>Caracteristica.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ctasBancariass.aspx.designer.vb">
+      <DependentUpon>ctasBancariass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ctasBancariass.aspx.vb">
+      <DependentUpon>ctasBancariass.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CtesConsulta.aspx.designer.vb">
+      <DependentUpon>CtesConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CtesConsulta.aspx.vb">
+      <DependentUpon>CtesConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EdoCta.aspx.designer.vb">
+      <DependentUpon>EdoCta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EdoCta.aspx.vb">
+      <DependentUpon>EdoCta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CambiarPsw.aspx.designer.vb">
+      <DependentUpon>CambiarPsw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CambiarPsw.aspx.vb">
+      <DependentUpon>CambiarPsw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Noticias.aspx.designer.vb">
+      <DependentUpon>Noticias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Noticias.aspx.vb">
+      <DependentUpon>Noticias.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegistroRapido.aspx.designer.vb">
+      <DependentUpon>RegistroRapido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistroRapido.aspx.vb">
+      <DependentUpon>RegistroRapido.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Reportes.aspx.designer.vb">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Reportes.aspx.vb">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Salir.aspx.designer.vb">
+      <DependentUpon>Salir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Salir.aspx.vb">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TaeFast.aspx.designer.vb">
+      <DependentUpon>TaeFast.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TaeFast.aspx.vb">
+      <DependentUpon>TaeFast.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tras.aspx.designer.vb">
+      <DependentUpon>Tras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tras.aspx.vb">
+      <DependentUpon>Tras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AtCtes.aspx.designer.vb">
+      <DependentUpon>AtCtes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AtCtes.aspx.vb">
+      <DependentUpon>AtCtes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DesbloqueaUser.aspx.designer.vb">
+      <DependentUpon>DesbloqueaUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DesbloqueaUser.aspx.vb">
+      <DependentUpon>DesbloqueaUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Deps.aspx.designer.vb">
+      <DependentUpon>Deps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Deps.aspx.vb">
+      <DependentUpon>Deps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Ctes.aspx.designer.vb">
+      <DependentUpon>Ctes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ctes.aspx.vb">
+      <DependentUpon>Ctes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PagoServ.aspx.designer.vb">
+      <DependentUpon>PagoServ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagoServ.aspx.vb">
+      <DependentUpon>PagoServ.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Startup.vb" />
+    <Compile Include="Pages\TAElectronico.aspx.designer.vb">
+      <DependentUpon>TAElectronico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TAElectronico.aspx.vb">
+      <DependentUpon>TAElectronico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.vb">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.vb">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.isendonline.test\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="ViewSwitcher.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="FilesDownloaded\" />
+    <Folder Include="FilesUploaded\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BACK_CODE\BACK_CODE.vbproj">
+      <Project>{200ca43b-4faf-48e7-a50a-15aaa9dce5e3}</Project>
+      <Name>BACK_CODE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://test.isendonline.com/iSendwebservice/iSend.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.isendonline.test\</RelPath>
+      <UpdateFromURL>https://test.isendonline.com/iSendwebservice/iSend.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TopItUp_com_isendonline_test_iSendService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16614</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16614/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
