@@ -506,6 +506,9 @@
     <Compile Include="EDM_TopItUp\INTEGRA_TICKETS.vb">
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
+    <Compile Include="EDM_TopItUp\logVentaTransacciones.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
     <Compile Include="EDM_TopItUp\NVOINTEGRATICKET.vb">
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
@@ -516,9 +519,6 @@
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM_TopItUp\sp_get_cat_mostrar_hasta_Result.vb">
-      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EDM_TopItUp\sysdiagrams.vb">
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM_TopItUp\TiempoAireTransact.vb">
@@ -557,6 +557,9 @@
     <Compile Include="EDM_TopItUp\tu_sp_consultaUsuario_Result.vb">
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_insertalogVentaTransacciones_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
     <Compile Include="EDM_TopItUp\tu_sp_obtieneCodigosErrorServicios1_Result.vb">
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
@@ -564,6 +567,9 @@
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM_TopItUp\tu_sp_obtieneDetalleTransacciones_Result.vb">
+      <DependentUpon>EDM_TopItUp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM_TopItUp\tu_sp_obtieneDominiosCorreo_Result.vb">
       <DependentUpon>EDM_TopItUp.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM_TopItUp\tu_sp_selectMovimientos1_Result.vb">

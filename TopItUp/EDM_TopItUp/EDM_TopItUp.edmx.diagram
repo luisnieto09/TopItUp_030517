@@ -120,12 +120,12 @@
         <edmx:AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_CA__53C32D94" ManuallyRouted="false" />
         <edmx:AssociationConnector Association="EDM_TopItUp1.FK__SALDOS__FK_TRANS__4E0A543E" ManuallyRouted="false" />
         <edmx:AssociationConnector Association="EDM_TopItUp1.FK__TRANSACCI__FK_US__5887E2B1" ManuallyRouted="false" />
-        <edmx:EntityTypeShape EntityType="EDM_TopItUp1.sysdiagrams" Width="1.5" PointX="26.875" PointY="1.875" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="EDM_TopItUp1.WCF_USEREXTERNALCODE" Width="1.5" PointX="25.25" PointY="1.75" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="EDM_TopItUp1.WCF_USERTRANSACTIONS" Width="1.5" PointX="26.875" PointY="4" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="EDM_TopItUp1.WCF_USERTRANSACTIONSS" Width="1.5" PointX="23.625" PointY="1.75" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="EDM_TopItUp1.WSF_USERTRANSACTIONS" Width="1.5" PointX="21.875" PointY="1.75" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="EDM_TopItUp1.TiempoAireTransact" Width="1.5" PointX="23.625" PointY="4.25" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="EDM_TopItUp1.logVentaTransacciones" Width="1.5" PointX="10.875" PointY="14.75" />
       </edmx:Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

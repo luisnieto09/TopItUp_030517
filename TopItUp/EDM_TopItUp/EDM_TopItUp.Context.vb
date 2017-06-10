@@ -67,12 +67,12 @@ Partial Public Class EDM_TopItUp
     Public Overridable Property USERS() As DbSet(Of USERS)
     Public Overridable Property TRANSACCIONES() As DbSet(Of TRANSACCIONES)
     Public Overridable Property CAT_MOSTRAR_HASTA() As DbSet(Of CAT_MOSTRAR_HASTA)
-    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
     Public Overridable Property WCF_USEREXTERNALCODE() As DbSet(Of WCF_USEREXTERNALCODE)
     Public Overridable Property WCF_USERTRANSACTIONS() As DbSet(Of WCF_USERTRANSACTIONS)
     Public Overridable Property WCF_USERTRANSACTIONSS() As DbSet(Of WCF_USERTRANSACTIONSS)
     Public Overridable Property WSF_USERTRANSACTIONS() As DbSet(Of WSF_USERTRANSACTIONS)
     Public Overridable Property TiempoAireTransact() As DbSet(Of TiempoAireTransact)
+    Public Overridable Property logVentaTransacciones() As DbSet(Of logVentaTransacciones)
 
     Public Overridable Function Get_Noticias_Usuario(pk_User As Nullable(Of Integer), fecha_inicio As Nullable(Of Date), fecha_fin As Nullable(Of Date)) As ObjectResult(Of Get_Noticias_Usuario_Result)
         Dim pk_UserParameter As ObjectParameter = If(pk_User.HasValue, New ObjectParameter("Pk_User", pk_User), New ObjectParameter("Pk_User", GetType(Integer)))
@@ -444,6 +444,56 @@ Partial Public Class EDM_TopItUp
         Dim fk_usuarioParameter As ObjectParameter = If(fk_usuario.HasValue, New ObjectParameter("fk_usuario", fk_usuario), New ObjectParameter("fk_usuario", GetType(Integer)))
 
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of tu_sp_obtieneDetalleTransacciones_Result)("tu_sp_obtieneDetalleTransacciones", fk_usuarioParameter)
+    End Function
+
+    Public Overridable Function tu_sp_actualizaSaldoServicios(username As String, transaccionid As Nullable(Of Integer), monto As Nullable(Of Decimal), iD_WS As Nullable(Of Integer), tIPO_MOV As Nullable(Of Integer), sKU As String, numeroreferencia As String) As Integer
+        Dim usernameParameter As ObjectParameter = If(username IsNot Nothing, New ObjectParameter("username", username), New ObjectParameter("username", GetType(String)))
+
+        Dim transaccionidParameter As ObjectParameter = If(transaccionid.HasValue, New ObjectParameter("transaccionid", transaccionid), New ObjectParameter("transaccionid", GetType(Integer)))
+
+        Dim montoParameter As ObjectParameter = If(monto.HasValue, New ObjectParameter("monto", monto), New ObjectParameter("monto", GetType(Decimal)))
+
+        Dim iD_WSParameter As ObjectParameter = If(iD_WS.HasValue, New ObjectParameter("ID_WS", iD_WS), New ObjectParameter("ID_WS", GetType(Integer)))
+
+        Dim tIPO_MOVParameter As ObjectParameter = If(tIPO_MOV.HasValue, New ObjectParameter("TIPO_MOV", tIPO_MOV), New ObjectParameter("TIPO_MOV", GetType(Integer)))
+
+        Dim sKUParameter As ObjectParameter = If(sKU IsNot Nothing, New ObjectParameter("SKU", sKU), New ObjectParameter("SKU", GetType(String)))
+
+        Dim numeroreferenciaParameter As ObjectParameter = If(numeroreferencia IsNot Nothing, New ObjectParameter("Numeroreferencia", numeroreferencia), New ObjectParameter("Numeroreferencia", GetType(String)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("tu_sp_actualizaSaldoServicios", usernameParameter, transaccionidParameter, montoParameter, iD_WSParameter, tIPO_MOVParameter, sKUParameter, numeroreferenciaParameter)
+    End Function
+
+    Public Overridable Function tu_sp_insertalogVentaTransacciones(fK_CAT_TELEFONIA As Nullable(Of Integer), sku_servicio As String, servicio As String, referencia As String, externalid As String, descripcion As String) As ObjectResult(Of tu_sp_insertalogVentaTransacciones_Result)
+        Dim fK_CAT_TELEFONIAParameter As ObjectParameter = If(fK_CAT_TELEFONIA.HasValue, New ObjectParameter("FK_CAT_TELEFONIA", fK_CAT_TELEFONIA), New ObjectParameter("FK_CAT_TELEFONIA", GetType(Integer)))
+
+        Dim sku_servicioParameter As ObjectParameter = If(sku_servicio IsNot Nothing, New ObjectParameter("sku_servicio", sku_servicio), New ObjectParameter("sku_servicio", GetType(String)))
+
+        Dim servicioParameter As ObjectParameter = If(servicio IsNot Nothing, New ObjectParameter("servicio", servicio), New ObjectParameter("servicio", GetType(String)))
+
+        Dim referenciaParameter As ObjectParameter = If(referencia IsNot Nothing, New ObjectParameter("referencia", referencia), New ObjectParameter("referencia", GetType(String)))
+
+        Dim externalidParameter As ObjectParameter = If(externalid IsNot Nothing, New ObjectParameter("externalid", externalid), New ObjectParameter("externalid", GetType(String)))
+
+        Dim descripcionParameter As ObjectParameter = If(descripcion IsNot Nothing, New ObjectParameter("descripcion", descripcion), New ObjectParameter("descripcion", GetType(String)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of tu_sp_insertalogVentaTransacciones_Result)("tu_sp_insertalogVentaTransacciones", fK_CAT_TELEFONIAParameter, sku_servicioParameter, servicioParameter, referenciaParameter, externalidParameter, descripcionParameter)
+    End Function
+
+    Public Overridable Function tu_sp_obtieneDominiosCorreo() As ObjectResult(Of tu_sp_obtieneDominiosCorreo_Result)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of tu_sp_obtieneDominiosCorreo_Result)("tu_sp_obtieneDominiosCorreo")
+    End Function
+
+    Public Overridable Function tu_sp_obtieneSaldoxUserID(usuario As String) As ObjectResult(Of Nullable(Of Decimal))
+        Dim usuarioParameter As ObjectParameter = If(usuario IsNot Nothing, New ObjectParameter("usuario", usuario), New ObjectParameter("usuario", GetType(String)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Decimal))("tu_sp_obtieneSaldoxUserID", usuarioParameter)
+    End Function
+
+    Public Overridable Function tu_sp_obtieneSaldoXUserName(userName As String) As ObjectResult(Of Nullable(Of Decimal))
+        Dim userNameParameter As ObjectParameter = If(userName IsNot Nothing, New ObjectParameter("UserName", userName), New ObjectParameter("UserName", GetType(String)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Decimal))("tu_sp_obtieneSaldoXUserName", userNameParameter)
     End Function
 
 End Class

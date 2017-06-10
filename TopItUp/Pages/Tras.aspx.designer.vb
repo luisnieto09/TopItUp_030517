@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Tras
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''ScriptManager1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-
+    
     '''<summary>
     '''upmain control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents upmain As Global.System.Web.UI.UpdatePanel
-
+    
     '''<summary>
     '''tblBackground control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tblBackground As Global.System.Web.UI.HtmlControls.HtmlTable
-
+    
     '''<summary>
     '''imglogox control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents imglogox As Global.System.Web.UI.WebControls.Image
-
+    
     '''<summary>
     '''logoTelcel control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents logoTelcel As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''NoticiasUser control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents NoticiasUser As Global.TopItUp.Noticia
-
+    
     '''<summary>
     '''tblSaldos control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tblSaldos As Global.System.Web.UI.HtmlControls.HtmlTable
-
+    
     '''<summary>
     '''lblCteConnected control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblCteConnected As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblFechaSaldo control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblFechaSaldo As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblUsrConnected control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblUsrConnected As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblTipoUser control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblTipoUser As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblTime control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblTime As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblDuracionSesion control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblDuracionSesion As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblSaldoGlobal control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblSaldoGlobal As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblSaldoCliente control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblSaldoCliente As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''TopBar control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TopBar As Global.TopItUp.TopBar
-
+    
     '''<summary>
     '''Img3 control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img3 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''opc1 control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents opc1 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''filaBanco control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents filaBanco As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
+    
     '''<summary>
     '''Img1 control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img1 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A11 control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A11 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img4 control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img4 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A1 control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A1 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img5 control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img5 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A2 control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A2 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img6 control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img6 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A3 control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A3 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img2 control.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img2 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A12 control.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A12 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img7 control.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img7 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A4 control.
     '''</summary>
@@ -300,7 +300,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A4 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img8 control.
     '''</summary>
@@ -309,7 +309,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img8 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A5 control.
     '''</summary>
@@ -318,7 +318,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A5 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img9 control.
     '''</summary>
@@ -327,7 +327,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img9 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A6 control.
     '''</summary>
@@ -336,7 +336,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A6 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img10 control.
     '''</summary>
@@ -345,7 +345,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img10 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A7 control.
     '''</summary>
@@ -354,7 +354,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A7 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img11 control.
     '''</summary>
@@ -363,7 +363,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img11 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A8 control.
     '''</summary>
@@ -372,7 +372,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A8 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img12 control.
     '''</summary>
@@ -381,7 +381,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img12 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A9 control.
     '''</summary>
@@ -390,7 +390,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A9 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img13 control.
     '''</summary>
@@ -399,7 +399,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img13 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''A10 control.
     '''</summary>
@@ -408,7 +408,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents A10 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''Img14 control.
     '''</summary>
@@ -417,7 +417,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Img14 As Global.System.Web.UI.HtmlControls.HtmlImage
-
+    
     '''<summary>
     '''opc10 control.
     '''</summary>
@@ -426,7 +426,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents opc10 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
+    
     '''<summary>
     '''ddlClienteRetiro control.
     '''</summary>
@@ -435,7 +435,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddlClienteRetiro As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''ddlClienteDeposito control.
     '''</summary>
@@ -444,7 +444,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddlClienteDeposito As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''lblSaldoCteOrigen control.
     '''</summary>
@@ -453,7 +453,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblSaldoCteOrigen As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtMontoTraspaso control.
     '''</summary>
@@ -462,7 +462,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtMontoTraspaso As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txtMotivoTraspaso control.
     '''</summary>
@@ -471,7 +471,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtMotivoTraspaso As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblMessage control.
     '''</summary>
@@ -480,7 +480,7 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''btnTraspasar control.
     '''</summary>
@@ -489,13 +489,4 @@ Partial Public Class Tras
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnTraspasar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''UpdateProgress1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UpdateProgress1 As Global.System.Web.UI.UpdateProgress
 End Class

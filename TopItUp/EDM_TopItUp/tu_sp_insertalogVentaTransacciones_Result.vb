@@ -10,11 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class sysdiagrams
-    Public Property name As String
-    Public Property principal_id As Integer
-    Public Property diagram_id As Integer
-    Public Property version As Nullable(Of Integer)
-    Public Property definition As Byte()
+Partial Public Class tu_sp_insertalogVentaTransacciones_Result
+    Public Property PK_CAT_SERVICIO As Integer
+    Public Property NOMBRE_CORTO As String
+    Public Property DESCRIPCION As String
+    Public Property STATUS As String
+    Public Property COBRAR_COMISION As Nullable(Of Integer)
 
 End Class

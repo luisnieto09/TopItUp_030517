@@ -10,15 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class CAT_WS
-    Public Property PK_CAT_WS As Integer
-    Public Property NOMBRE_CORTO As String
-    Public Property DESCRIPCION As String
-    Public Property ORDEN_PRIORIDAD As Integer
-    Public Property URL_SITIO As String
-    Public Property STATUS As String
-    Public Property PrioridadAPP As Nullable(Of Integer)
-
-    Public Overridable Property TRANSACCIONES As ICollection(Of TRANSACCIONES) = New HashSet(Of TRANSACCIONES)
+Partial Public Class tu_sp_obtieneDominiosCorreo_Result
+    Public Property dominio As String
+    Public Property status As Nullable(Of Boolean)
 
 End Class

@@ -10,15 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class CAT_WS
-    Public Property PK_CAT_WS As Integer
-    Public Property NOMBRE_CORTO As String
-    Public Property DESCRIPCION As String
-    Public Property ORDEN_PRIORIDAD As Integer
-    Public Property URL_SITIO As String
-    Public Property STATUS As String
-    Public Property PrioridadAPP As Nullable(Of Integer)
-
-    Public Overridable Property TRANSACCIONES As ICollection(Of TRANSACCIONES) = New HashSet(Of TRANSACCIONES)
+Partial Public Class logVentaTransacciones
+    Public Property id As Integer
+    Public Property FK_CAT_TELEFONIA As Nullable(Of Integer)
+    Public Property FK_CAT_SERVICIO As Nullable(Of Integer)
+    Public Property servicio As String
+    Public Property referencia As String
+    Public Property externalid As String
+    Public Property fecha As Nullable(Of Date)
+    Public Property descripcion As String
 
 End Class

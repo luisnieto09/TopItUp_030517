@@ -2,6 +2,7 @@
 Imports TopItUp.Helpers
 Imports System.Net.Mail
 Imports System.Configuration
+Imports System.Globalization
 
 Public Class Deps
     Inherits BasePage
@@ -543,6 +544,9 @@ Public Class Deps
 
     Protected Sub btnAutorizar_Click(sender As Object, e As EventArgs) Handles btnAutorizar.Click
         Try
+
+            System.Threading.Thread.CurrentThread.CurrentCulture = New CultureInfo("es-MX")
+
             'Si hay un registro seleccionado 
             If Me.grdPagosEnviados.SelectedIndex <> -1 Then
                 Dim objPago As New PAGOS
@@ -667,7 +671,7 @@ Public Class Deps
 
                     strRutaFile = fileUp.FileName
 
-                    Dim rutaserver As String = ConfigurationManager.AppSettings("RutaReciboDePago").ToString()
+                    Dim rutaserver As String = Server.MapPath(ConfigurationManager.AppSettings("RutaReciboDePago").ToString())
 
                     strRutaServer = rutaserver & nombreArchivo
 
@@ -819,7 +823,15 @@ Public Class Deps
                         For Each f As PAGOS_FILES_UPLOADED In model.PAGOS_FILES_UPLOADED.SqlQuery("SELECT * FROM PAGOS_FILES_UPLOADED WHERE FK_PAGO=" & objPago.PK_PAGO).ToList()
                             Dim FILE As New FILES()
                             FILE = model.FILES.Find(f.FK_FILE)
-                            Dim imagen As New LinkedResource("C:\inetpub\wwwroot\TopItUp\TopItUp\FilesUploaded\" & FILE.NOMBRE_REAL)
+
+                            Dim words As String() = FILE.NOMBRE_REAL.Split(New Char() {"\"c})
+                            Dim nombreArchivo As String = words(words.Length - 1)
+                            Dim rutaserver As String = Server.MapPath(ConfigurationManager.AppSettings("RutaReciboDePago").ToString())
+
+                            strRutaServer = rutaserver & nombreArchivo
+
+                            'Dim imagen As New LinkedResource("C:\inetpub\wwwroot\TopItUp\TopItUp\FilesUploaded\" & FILE.NOMBRE_REAL)
+                            Dim imagen As New LinkedResource(strRutaServer)
                             imagen.ContentId = FILE.PK_FILE
                             HTMLConImagenes.LinkedResources.Add(imagen)
                             objmail.AlternateViews.Add(HTMLConImagenes)

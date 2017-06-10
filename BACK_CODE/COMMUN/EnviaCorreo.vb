@@ -69,8 +69,7 @@ Public Class EnviaCorreo
             Dim enablessl = Convert.ToBoolean(_enableSsl)
 
             Using _smptclient As New SmtpClient(smptServer, puerto)
-                _smptclient.DeliveryMethod = SmtpDeliveryMethod.Network
-                _smptclient.EnableSsl = enablessl
+
                 Dim mailFrom = New MailAddress(correoFrom)
                 Dim mailmsg = New MailMessage()
                 mailmsg.From = mailFrom
@@ -95,14 +94,15 @@ Public Class EnviaCorreo
                     End If
                 End If
 
+                _smptclient.DeliveryMethod = SmtpDeliveryMethod.Network
+                _smptclient.EnableSsl = enablessl
+
                 mailmsg.Subject = subject
                 mailmsg.Body = Mensaje
-                _smptclient.UseDefaultCredentials = True
 
-                Dim credenciales As New NetworkCredential(_correoFrom, _Pass)
-
-                _smptclient.Credentials = credenciales
+                _smptclient.Credentials = New System.Net.NetworkCredential(_correoFrom, _Pass)
                 _smptclient.Send(mailmsg)
+
                 mailmsg.Dispose()
             End Using
         Catch ex As SmtpException
@@ -124,14 +124,16 @@ Public Class EnviaCorreo
             Dim correoFrom As String
             Dim enablessl = Convert.ToBoolean(_enableSsl)
 
-            Select Case EmailFROM
-                Case 1
-                    correoFrom = "atencion.clientes@topitup.net" ' "atencion.clientestip@gmail.com"
-                Case 2
-                    correoFrom = "depositos@topitup.net" ' "depositostip@gmail.com" 
-                Case Else
-                    correoFrom = "clientes@topitup.net" ' "atencion.clientestip@gmail.com" 
-            End Select
+            'Select Case EmailFROM
+            '    Case 1
+            '        correoFrom = "atencion.clientes@topitup.net" ' "atencion.clientestip@gmail.com"
+            '    Case 2
+            '        correoFrom = "depositos@topitup.net" ' "depositostip@gmail.com" 
+            '    Case Else
+            '        correoFrom = "clientes@topitup.net" ' "atencion.clientestip@gmail.com" 
+            'End Select
+
+            correoFrom = _correoFrom
 
             Using _smptclient As New SmtpClient(smptServer, puerto)
                 _smptclient.DeliveryMethod = SmtpDeliveryMethod.Network

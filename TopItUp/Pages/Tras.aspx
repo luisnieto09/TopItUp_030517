@@ -210,6 +210,21 @@
            color:white;
           }
           </style>
+
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+<!--    <script src="../Scripts/Validaciones.js"></script>-->
+
+    <script>
+        $(function () {
+            $(document).on("keypress", ".noenter", function (e) {
+                if (e.keyCode == 13)
+                {
+                    return false; 
+                }
+            });
+
+        });
+    </script>
 </head>
    
 <body style="margin-top:0; style=background-color:#666666;">
@@ -323,11 +338,11 @@
                                                         <img class="auto-style131" src="../Images/puntoOff.png" runat="server" id="Img3"><span class="auto-style131"> </span></td>
                                                     <td><a href="TAElectronico.aspx" runat="server" id="opc1"><span class="auto-style131">Compra de Tiempo Aire</span></a></td>
                                                 </tr>
-                                                <% 
+                                                <%--<% 
                                                     If Not Session("servcol") Is Nothing Then
                                                         Response.Write(Session("servcol").ToString())
                                                     End If
-                                                %>
+                                                %>--%>
                                                 <tr runat="server" id="filaBanco">
                                                     <td class="auto-style149">&nbsp;</td>
                                                     <td>
@@ -486,7 +501,9 @@
                                                             <td class="auto-style195">
                                                                 &nbsp;</td>
                                                             <td>
-                                                                <span class="auto-style205">MONTO MÁXIMO DISPONIBLE A TRASPASAR</span><asp:Label ID="lblSaldoCteOrigen" runat="server" Width="300px" Font-Size="Small"   BorderColor="#00CC00" Font-Bold="False" BorderStyle="Double" style="text-align: center; font-weight: 700"></asp:Label>
+                                                                <span class="auto-style205">MONTO MÁXIMO DISPONIBLE A TRASPASAR</span>
+                                                                <asp:Label ID="lblSaldoCteOrigen" runat="server" Width="300px" Font-Size="Small" BorderColor="#00CC00" Font-Bold="False" BorderStyle="Double" style="text-align: center; font-weight: 700"></asp:Label>
+                                                                
                                                             </td>
                                                             <td class="auto-style197">
                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
@@ -587,7 +604,7 @@
         <div style="float: left; width: 797px; text-align: left; color: #000000;">
                                 
                                         </div>
-        <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upmain"
+       <%-- <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upmain"
         DisplayAfter="100" DynamicLayout="true">
         <ProgressTemplate>
             <div id="blur">
@@ -600,12 +617,12 @@
                  
             </div>
         </ProgressTemplate>
-        </asp:UpdateProgress> 
+        </asp:UpdateProgress> --%>
 
-          <script src="../Scripts/jquery-1.10.2.min.js"></script>
-          <script src="../Scripts/Validaciones.js"></script>
+          <%--<script src="../Scripts/jquery-1.10.2.min.js"></script>
+          <script src="../Scripts/Validaciones.js"></script>--%>
     </form>
-    <script>
+    <%--<script>
         $(function () {
             $(document).on("keypress", ".noenter", function (e) {
                 if (e.keyCode == 13)
@@ -615,7 +632,7 @@
             });
 
         });
-    </script>
+    </script>--%>
     </body>
     
 </html>

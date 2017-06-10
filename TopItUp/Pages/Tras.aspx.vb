@@ -381,6 +381,7 @@ Public Class Tras
             Dim objGeneric As New clsGenerics
             Me.propSaldoCteOrigen = objGeneric.func_GetSaldoUsr(objGeneric.func_GetUserByCliente(Me.ddlClienteRetiro.SelectedItem.Value))
             Me.lblSaldoCteOrigen.Text = propSaldoCteOrigen
+
         Else
             Me.propSaldoCteOrigen = CDec(0.0)
         End If
@@ -402,9 +403,9 @@ Public Class Tras
 
             'GUARDO EL REGISTRO DEL SALDO DE CADA UNO DE LOS CLIENTES
             If func_RegistraTraspaso() = True Then
-                Me.lblMessage.Text = "<html><body><ol>El traspaso por la cantidad de <b>" & Me.txtMontoTraspaso.Text & "<\b> ha sido exitoso, los nuevos saldos disponibles son:<\ol><br>"
-                Me.lblMessage.Text &= "<ul>Cliente Retiro ( " & Me.ddlClienteRetiro.SelectedItem.Text & " ) : " & propSaldoCteOrigen & "<\ul>."
-                Me.lblMessage.Text &= "<ul>Cliente Depósito ( " & Me.ddlClienteDeposito.SelectedItem.Text & " ) : " & propSaldoCteDestino & ".<\ul></body></html>"
+                Me.lblMessage.Text = "<html><body><ol>El traspaso por la cantidad de <b>" & Me.txtMontoTraspaso.Text & "</b> ha sido exitoso, los nuevos saldos disponibles son:</ol><br>"
+                Me.lblMessage.Text &= "<ul>Cliente Retiro ( " & Me.ddlClienteRetiro.SelectedItem.Text & " ) : " & propSaldoCteOrigen & "</ul>."
+                Me.lblMessage.Text &= "<ul>Cliente Depósito ( " & Me.ddlClienteDeposito.SelectedItem.Text & " ) : " & propSaldoCteDestino & ".</ul></body></html>"
                 Dim mail As New BACK_CODE.EnviaCorreo
                 Me.txtMontoTraspaso.Text = ""
                 txtMotivoTraspaso.Text = ""

@@ -1,4 +1,4 @@
-﻿' T4 code generation is enabled for model 'C:\Proyectos\TopitUp\Respaldos\TopItUp_030517\TopItUp\EDM_TopItUp\EDM_TopItUp.edmx'. 
+﻿' T4 code generation is enabled for model 'C:\Proyectos\TopitUp\TopItUp_030517\TopItUp\EDM_TopItUp\EDM_TopItUp.edmx'. 
 ' To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 ' property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 ' is open in the designer.
